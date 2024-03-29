@@ -2,8 +2,8 @@ import axios from 'axios'
 import {AuthResponse} from "../models/response/AuthResponse";
 import * as process from 'process';
 
-
-export const API_URL = 'http://localhost:4005/api'
+export const API_URL = 'https://glasesstoreserver.vercel.app/api'
+// export const API_URL = 'http://localhost:4005/api'
 
 
 const $glassesApi = axios.create({
