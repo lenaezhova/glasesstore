@@ -1,0 +1,9 @@
+.customButton {
+  :global {
+    .ant-btn {
+      display: flex;
+      border-radius: 32px;
+      align-items: center;
+    }
+  }
+}

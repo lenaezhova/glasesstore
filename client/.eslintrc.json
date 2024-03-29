@@ -1,0 +1,62 @@
+{
+    "extends": [
+        "next",
+        "prettier",
+        "standard"
+    ],
+    "ignorePatterns": [
+        "app/layout.tsx"
+    ],
+    "plugins": [
+      "react-hooks",
+      "react-perf"
+    ],
+    "rules": {
+        "multiline-ternary": "off",
+        "semi": [
+            1,
+            "always"
+        ],
+        "indent": [
+            "error",
+            2
+        ],
+        "object-curly-spacing": "off",
+        "no-trailing-spaces": "off",
+        "space-before-function-paren": "off",
+        "jsx-quotes": [
+            1,
+            "prefer-single"
+        ],
+        "padded-blocks": [
+            "off",
+            "always"
+        ],
+        "react-hooks/rules-of-hooks": "error",
+        "react-hooks/exhaustive-deps": "error",
+        "react-perf/jsx-no-new-function-as-prop": [
+          "warn",
+          {
+            "nativeAllowList": ["style"]
+          }
+        ],
+        "react-perf/jsx-no-new-object-as-prop": [
+          "warn",
+          {
+            "nativeAllowList": ["style"]
+          }
+        ],
+        "react-perf/jsx-no-jsx-as-prop": [
+          "warn",
+          {
+            "nativeAllowList": ["style"]
+          }
+        ],
+        "react-perf/jsx-no-new-array-as-prop": [
+          "warn",
+          {
+            "nativeAllowList": ["style"]
+          }
+        ]
+    }
+}

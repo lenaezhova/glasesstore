@@ -1,0 +1,32 @@
+.footer {
+  display: flex;
+  align-items: center;
+  background-color: #eef1f2;
+  border-radius: 32px;
+  flex-direction: column;
+  margin-bottom: 40px;
+  padding: 40px 30px;
+  margin-top: 50px;
+}
+
+.footerHeader {
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 40px;
+  margin: 0
+}
+
+.footerSubTitle {
+  font-size: 14px;
+  letter-spacing: -.02em;
+  line-height: 20px;
+  margin: 8px 0 20px;
+}
+
+.footerForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  width: 50%;
+}

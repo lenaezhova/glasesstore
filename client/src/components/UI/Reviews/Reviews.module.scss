@@ -1,0 +1,28 @@
+.reviewsContainer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.reviewsContainerFirst {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.reviewsContainerSecond {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.raitingStar {
+  width: 20px;
+  height: 20px;
+}
+
+.reviewsItem {
+  font-size: 14px;
+  color: var(--product-text-color);
+}
+

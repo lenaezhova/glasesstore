@@ -1,0 +1,55 @@
+.inStockContainer {
+  display: flex;
+  justify-content: space-between;
+  border-radius: 32px;
+  border: 1px solid #f2f5fe;
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.5;
+  font-style: normal;
+  font-weight: 400;
+  color: #333f48;
+  background: #fff;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.inStockDecrement {
+  background-color: #f2f5fe;
+  border-color: #f2f5fe;
+  color: #333f48;
+  border-bottom-left-radius: 500px;
+  border-top-left-radius: 500px;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 0 6px 0 6px;
+  transition: 0.5s background-color;
+
+  &:hover {
+    background-color: #e5e5e5;
+  }
+}
+
+.inStockIncrement {
+  background-color: #f2f5fe;
+  border-color: #f2f5fe;
+  color: #333f48;
+  border-bottom-right-radius: 500px;
+  border-top-right-radius: 500px;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 0 6px 0 6px;
+  transition: 0.5s background-color;
+
+  &:hover {
+    background-color: #e5e5e5;
+  }
+}
+
+.inStockCount {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+

@@ -1,0 +1,11 @@
+.underline {
+  border-bottom: 1px solid rgb(226, 230, 233);
+}
+
+.containerItems {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0 0 24px 24px;
+  width: 100%;
+}

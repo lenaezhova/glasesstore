@@ -1,0 +1,100 @@
+.favoriteListItem {
+  background-color: #fff;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-height: 300px;
+  min-height: auto;
+  opacity: 1;
+  padding: 15px 20px 15px 15px;
+  width: 200px;
+}
+
+.itemElement {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  cursor: pointer;
+}
+
+.imageWrapper {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.itemPrice {
+  margin: 0 8px 0 0;
+  font-size: 18px;
+}
+
+.itemTitle {
+  color: var(--product-text-color);
+  font-size: 16px;
+  height: 30px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.infoTitleContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.infoContainer {
+  display: flex;
+  height: 110px;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.infoPrice {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.buyButton {
+  border-radius: 12px;
+  padding: 8px;
+  width: 65px;
+  height: 30px;
+  font-size: 12px;
+}
+
+.counter {
+  width: 70px;
+}
+
+.classStar {
+  margin-top: -12px;
+  width: 15px;
+  height: 15px;
+}
+
+.classReviewsText {
+  margin-top: -12px;
+  font-size: 12px;
+  color: var(--product-text-color);
+}
+
+.heart {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+}
+
+.imageContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+

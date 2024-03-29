@@ -1,0 +1,45 @@
+@import '@/src/styles/mixins.scss';
+
+.productGallarySlide {
+  &__img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: auto !important;
+    max-width: 100%;
+    object-fit: contain;
+    max-height: 300;
+  }
+
+  &__video {
+    width: 80%;
+    height: 640px;
+
+    @media screen and (max-width: $breakpoint-md) {
+      height: 500px;
+    }
+
+    @media screen and (max-width: $breakpoint-sm) {
+      height: 350px;
+    }
+  }
+}
+
+.youtubeIcon {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  font-size: 30px;
+  color: #fff;
+  background: #0000008c;
+  border-radius: 5px;
+  padding: 5px;
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+
+  @media screen and (max-width: $breakpoint-md) {
+    font-size: 18px;
+    top: 10px;
+    left: 10px;
+  }
+}

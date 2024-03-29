@@ -1,0 +1,22 @@
+.listContainer {
+  //border-radius: 12px;
+  //box-shadow: 0 0 2px rgba(0, 0, 0, 0.08), 0 2px 24px rgba(0, 0, 0, 0.06);
+  padding: 36px 0 0 0;
+}
+
+.listItemsContainer {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+}
+
+.underline {
+  position: absolute;
+  margin-top: 25px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: rgba(0, 0, 0, 0.09);
+}
+

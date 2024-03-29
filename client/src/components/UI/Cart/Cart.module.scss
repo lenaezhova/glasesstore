@@ -1,0 +1,43 @@
+.AntdBtn {
+    background-color: rgba(255, 255, 255, 0);
+    border: 0;
+    color: #fff;
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0.0);
+}
+
+.iconContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: -10px;
+  width: 40px;
+  height: 40px;
+}
+
+.count {
+  position: absolute;
+  top: -6px;
+  right: -3px;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: var(--primary--color);
+  font-size: 12px;
+}
+
+.cartIcon {
+  color: #494f54;
+}
+
+.text {
+  font-size: 12px;
+  color: #494f54;
+  margin-left: 2px;
+  margin-top: -2px;
+}

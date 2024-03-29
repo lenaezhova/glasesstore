@@ -1,0 +1,21 @@
+.header {
+  //background: var(--header-background);
+  //background-size: var(--header-background-size);
+  //background-image: url('../../../public/images/bubles/bubles01.svg'),
+  //url('../../../public/images/bubles/bubles02.svg'),
+  //url('../../../public/images/bubles/bubles03.svg'),linear-gradient(to right,#f3f3f3 0%,#ddd 100%);
+  //background-size: 796px 196px,200px 200px,195px 195px,cover;
+  //background-position: bottom 0%,left -5% bottom -35%,left 60% bottom -20%,right -4% top -10%,center;
+  //background-repeat: no-repeat,no-repeat,no-repeat;
+  transition: 0.35s background;
+}
+
+.headerInner {
+  @include container;
+  @include fluid(padding-top, 10px, 20px);
+  @include fluid(padding-bottom, 10px, 20px);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 20px;
+}

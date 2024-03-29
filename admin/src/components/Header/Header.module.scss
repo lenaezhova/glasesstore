@@ -1,0 +1,13 @@
+.header {
+  background: rgba(0, 0, 0, 0.12);
+}
+
+.headerInner {
+  @include container;
+  @include fluid(padding-top, 10px, 20px);
+  @include fluid(padding-bottom, 10px, 20px);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 20px;
+}

@@ -1,0 +1,81 @@
+.footer {
+  min-height: 150px;
+  height: 150px;
+  background: var(--footer-background);
+  background-size: var(--footer-background-size);
+  color: #fff;
+  transition: 0.35s background;
+}
+
+.footerInner {
+  @include container;
+  @include fluid(padding-top, 10px, 20px);
+  @include fluid(padding-bottom, 10px, 20px);
+  display: grid;
+  //justify-content: space-between;
+  grid-template-columns: 1fr 1fr 1fr;
+
+}
+
+.footerLogo {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.logo {
+  filter: var(--filter-shadow)
+}
+
+.footerCenter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-right: 90px;
+}
+
+.footerRight {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.footerRightInner {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.footerRightContacts {
+  display: flex;
+  justify-content: flex-start;
+  gap: 30px;
+  align-items: center;
+}
+
+.footerRightInfo {
+  display: flex;
+  justify-content: flex-start;
+  gap: 30px;
+  align-items: center;
+}
+
+.footerIcon {
+  font-size: 30px;
+  cursor: pointer;
+
+  &:hover {
+    color: #645ac4;
+  }
+}
+
+.footerInfoItem {
+
+  &:hover {
+    color: #645ac4;
+  }
+}
+

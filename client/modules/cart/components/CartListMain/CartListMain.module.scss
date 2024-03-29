@@ -1,0 +1,30 @@
+.block {
+  margin-right: 32px;
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 0 2px rgba(0,0,0,.08), 0 2px 24px rgba(0,0,0,.06);
+}
+
+.underline {
+  border-bottom: 1px solid rgb(226, 230, 233);
+}
+
+.testBox {
+  height: 100px;
+}
+
+.containerItems {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 24px;
+}
+
+
+.item {
+
+  &:last-child {
+    border-bottom: 1px solid rgb(226, 230, 233);
+  }
+}

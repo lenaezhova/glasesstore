@@ -1,0 +1,101 @@
+.block {
+  display: flex;
+  //margin-top: 32px;
+  padding: 37px 5px 37px 5px;
+  //padding: 40px;
+  gap: 20px;
+  justify-content: start;
+}
+
+.imageWrapper {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+}
+
+.containerImage {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.infoBlock {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.cartItemSecondHeader {
+  display: flex;
+  margin-top: -7px;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  max-width: 400px;
+  gap: 10px;
+}
+
+.link {
+  height: 30px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.infoBody {
+  height: 100%;
+  width: 100%;
+}
+
+.text {
+  color: var(--product-text-color)
+}
+
+.containerPrice {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  font-size: 22px;
+}
+
+.containerIcons {
+  margin-top: 20px;
+  display: flex;
+  align-items: start;
+  gap: 5px;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+}
+
+.infoContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.blockPrice {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.buyButton {
+  border-radius: 12px;
+  padding: 8px;
+  width: 65px;
+  height: 30px;
+  font-size: 12px;
+}
+
+.counter {
+  width: 70px;
+}

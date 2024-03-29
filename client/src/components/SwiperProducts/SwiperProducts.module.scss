@@ -1,0 +1,26 @@
+.swiper {
+  display: none;
+  margin-left: auto;
+  margin-right: auto;
+  height: 100%;
+  border-radius: 12px;
+}
+
+.swiperContainer {
+  display: none;
+  background-color: rgba(255, 255, 255, 0);
+}
+
+.spin {
+  display: flex;
+  height: 100px;
+  align-items: center;
+  justify-content: center;
+}
+
+.title {
+  display: none;
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+

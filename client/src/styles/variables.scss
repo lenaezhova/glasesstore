@@ -1,0 +1,39 @@
+:root {
+  /*--- Default theme ---*/
+  --background: #103783;
+  --foreground: #4a7c4a;
+  --border: #376880;
+  --text: #ffffff;
+  --header-background: url(../../public/images/violet.svg) center center repeat,
+  linear-gradient(to right bottom,#7b6cff 0%,#645ac4 100%) center center no-repeat;
+  --header-background-size: 24px 24px, cover;
+  --footer-background: url(../../public/images/violet.svg) center center repeat,
+  linear-gradient(to right bottom,#7b6cff 0%,#645ac4 100%) center center no-repeat;
+  --footer-background-size: 24px 24px, cover;
+  --filter-shadow: drop-shadow(3px 3px 10px rgba(7, 0, 0, 0.37));
+  --bg-modal-color: white;
+  --overlay-color: rgba(0 0 0 / 35%);
+  --modal-z-index: 10;
+  --product-text-color: #8c959c;
+  --primary--color: #7A6CFD;
+  --block-radius: 10px;
+  --background-card: #FFFFF;
+  --background-card-small: #eaeaea;
+  --box-shadow-color: rgba(108, 120, 253, 0.2);
+}
+
+[data-theme="dark"] {
+  --background: #b5c6e0;
+  --foreground: #4489a4;
+  --border: #943ace;
+  --text: #000000;
+  --layout-background: url(../../public/images/violet.svg) center center repeat,
+  linear-gradient(to right bottom,#7b6cff 0%,#645ac4 100%) center center no-repeat;
+  --layout-background-size: 24px 24px, cover;
+  --logo-filter-shadow: drop-shadow(3px 3px 10px rgba(0, 0, 0, 0.2));
+  --bg-modal-color: white;
+  --overlay-color: rgba(0 0 0 / 35%);
+  --modal-z-index: 10;
+  --product-text-color: #8c959c;
+  --primary--color: #7A6CFD;
+}

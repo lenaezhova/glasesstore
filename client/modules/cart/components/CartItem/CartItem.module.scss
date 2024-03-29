@@ -1,0 +1,119 @@
+.block {
+  display: flex;
+  padding: 37px 5px 37px 5px;
+  width: 100%;
+  gap: 20px;
+  justify-content: space-between;
+}
+
+.imageWrapper {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+}
+
+.containerImage {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.blockInfo {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.cartItemSecondHeader {
+  display: flex;
+  margin-top: -7px;
+}
+
+.containerTitle {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  max-width: 400px;
+  gap: 10px;
+}
+
+.linkTitle {
+  height: 30px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.bodyInfo {
+  height: 100%;
+  width: 100%;
+}
+
+.text {
+  color: var(--product-text-color)
+}
+
+.containerPrice {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  font-size: 22px;
+}
+
+.containerIcons {
+  margin-top: 20px;
+  display: flex;
+  align-items: start;
+  gap: 5px;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+}
+
+.containerInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.blockPrice {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.inStockCounter {
+  width: 75px;
+}
+
+.classStar {
+  margin-top: -10px;
+  width: 15px;
+  height: 15px;
+}
+
+.classReviewsText {
+  margin-top: -9px;
+  font-size: 15px;
+  color: var(--product-text-color);
+}
+
+.counter {
+  width: 100px;
+}
+
+.counterButtonInc {
+  height: 30px;
+  width: 40px;
+}
+
+.counterButtonDec {
+  width: 40px;
+}
+
+

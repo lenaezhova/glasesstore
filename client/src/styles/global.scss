@@ -1,0 +1,37 @@
+@import "normalize";
+@import "libs";
+@import "mixins";
+@import "variables";
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @include fluid(font-size, 14px, 16px);
+  font-family: var(--montserrat-font);
+  font-weight: 400;
+}
+
+.main {
+  @include fluid(font-size, 14px, 16px);
+  height: 100%;
+  font-family: var(--montserrat-font);
+  font-weight: 400;
+  line-height: 1.6;
+  font-style: normal;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.container {
+  @include container;
+  flex-grow: 1;
+}
+
+.textHeader {
+  font-size: 35px;
+  margin-top: 50px;
+}
+

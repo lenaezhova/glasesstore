@@ -1,0 +1,68 @@
+.bannerContainer {
+  margin-top: 70px;
+  height: 270px;
+  display: flex;
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-image: url('../../../../public/images/bubles/bubles01.svg'),
+  url('../../../../public/images/bubles/bubles02.svg'),
+  url('../../../../public/images/bubles/bubles03.svg'),linear-gradient(to right,#f3f3f3 0%,#ddd 100%);
+  background-size: 396px 396px,200px 200px,195px 195px,cover;
+  background-position: bottom 0%,left -5% bottom -35%,left 60% bottom -20%,right -4% top -10%,center;
+  background-repeat: no-repeat,no-repeat,no-repeat;
+  height: 100%;
+  width: 100%;
+  border-radius: 32px;
+}
+
+.contentInfo {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  flex-direction: column;
+  gap: 30px;
+  margin-right: 50px;
+}
+
+.mobile {
+  width: 250px;
+  min-width: 250px;
+  min-height: 350px;
+  align-self: flex-end;
+  background-image: url('../../../../public/images/mobila.png');
+  background-size: 320px 350px;
+  background-repeat: no-repeat;
+}
+
+.contentText {
+  text-align: right;
+}
+
+.textDescription {
+  color: #666;
+  font-size: 24px;
+  font-weight: 900;
+}
+
+.textTitle {
+  color: #645ac4;
+  font-size: 30px;
+  font-weight: 900;
+  margin: 20px 0 0 0;
+}
+
+.linksContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 20px;
+}
+
+.linkIco {
+  cursor: pointer;
+}

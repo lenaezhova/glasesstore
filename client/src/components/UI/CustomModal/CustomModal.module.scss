@@ -1,0 +1,48 @@
+.AuthModalContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 300px;
+  width: 400px;
+}
+
+.ModalHeader {
+  width: calc(100% - 15px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 35px;
+}
+
+.ModalFooter {
+  display: flex;
+  justify-content: space-between;
+}
+
+.AntdModalHeader {
+  :global {
+    .ant-modal-header {
+      border-bottom: 0;
+    }
+  }
+}
+
+.AntdModalFooter {
+  :global {
+    .ant-modal-footer {
+      padding: 0 24px 24px 24px;
+      border-top: 0;
+    }
+  }
+}
+
+.AntdModalBody {
+  :global {
+    .ant-modal-body {
+      margin: 0;
+    }
+  }
+}
+
+

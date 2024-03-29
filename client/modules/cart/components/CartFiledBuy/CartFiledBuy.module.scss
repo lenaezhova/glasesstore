@@ -1,0 +1,25 @@
+.block {
+  position: sticky;
+  top: 30px;
+  left: 30px;
+  min-width: 288px;
+  width: 200px;
+  border-radius: 12px;
+  box-shadow: 0 0 2px rgba(0,0,0,.08), 0 2px 24px rgba(0,0,0,.06) ;
+  height: 170px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  height: 100%;
+  padding: 25px;
+ }
+
+.priceContainer {
+  display: flex;
+  justify-content: space-between;
+  font-size: 24px;
+}
+

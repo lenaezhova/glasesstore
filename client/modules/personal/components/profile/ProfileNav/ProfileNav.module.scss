@@ -1,0 +1,12 @@
+.headerLinks {
+  display: flex;
+  gap: 30px;
+}
+
+.link {
+  color: var(--product-text-color);
+}
+
+.linkActive {
+  color: blue;
+}

@@ -1,0 +1,36 @@
+.block {
+  display: flex;
+  flex-direction: column;
+  max-width: 250px;
+  width: 100%;
+  border-radius: 12px;
+  padding: 12px;
+  gap: 10px;
+}
+
+.categoryItems {
+  display: flex;
+  margin-left: 10px;
+  flex-direction: column;
+}
+
+.categoryItem {
+  font-size: 14px;
+  color: var(--product-text-color);
+
+  &:hover {
+    color: var(--primary--color);
+  }
+}
+
+.categoryItemActive {
+  font-size: 14px;
+  color: var(--primary--color);
+}
+
+.loading {
+  width: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
