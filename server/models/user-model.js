@@ -9,6 +9,8 @@ const UserSchema = new Schema({
     surname: {type: String, required: true},
     patronymic: {type: String, required: false, default: ''},
     isActivated: {type: Boolean, default: false},
+    basketId: {type: Schema.Types.ObjectId, required: false, ref: 'Basket'},
+    favoriteId: {type: Schema.Types.ObjectId, required: false, ref: 'Favorite'},
     activationLink: {type: String},
 })
 

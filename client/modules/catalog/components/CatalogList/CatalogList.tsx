@@ -8,17 +8,20 @@ import menuVec from '@/public/images/menuVec.svg';
 import menuVecBlue from '@/public/images/menuVecBlue.svg';
 import menuBlock from '@/public/images/menuBlock.svg';
 import menuBlockBlue from '@/public/images/menuBlockBlue.svg';
+import {useAllProduct} from "@/src/http/hooks/useAllProduct";
 
 const CatalogList = () => {
   const [isVert, setVert] = useState(false);
 
-  const {
-    products,
-    setProducts,
-    categoryName,
-    offset,
-    setTotal
-  } = useCatalogStore(state => state);
+  // const {
+  //   products,
+  //   setProducts,
+  //   categoryName,
+  //   offset,
+  //   setTotal
+  // } = useCatalogStore(state => state);
+
+  const {data} = useAllProduct();
 
   useEffect(() => {
     const res = localStorage.getItem('menuCatalogView');
@@ -59,7 +62,7 @@ const CatalogList = () => {
       {/*{isVert*/}
       {/*  ? <CartVert products={products} setProducts={setProducts}/>*/}
       {/*  : */}
-      <CardCatalog products={products}/>
+      <CardCatalog products={data}/>
       {/*}*/}
     </div>
   );

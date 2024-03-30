@@ -1,5 +1,7 @@
 import $glassesApi from '@/src/http';
 import {
+  IPostAddBasket,
+  IPostAddFavorite,
   IPostLoginRequest, IPostLoginResponse,
   IPostRefreshRequest, IPostRefreshResponse,
   IPostRegisterRequest
@@ -34,6 +36,24 @@ export default class UserRegisterEndpoints {
 
   static logout = async () => {
     const {data} = await $glassesApi.post('/logout');
+
+    return data;
+  };
+
+  static addFavorite = async (request: IPostAddFavorite) => {
+    const {data} = await $glassesApi.post(
+      '/add/favorite',
+      {...request}
+    );
+
+    return data;
+  };
+
+  static addBasket = async (request: IPostAddBasket) => {
+    const {data} = await $glassesApi.post(
+      '/add/basket',
+      {...request}
+    );
 
     return data;
   };

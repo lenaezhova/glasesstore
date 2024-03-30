@@ -54,6 +54,46 @@ class UserController{
         }
     }
 
+    async addFavorite(req, res, next){
+        try {
+            const {userId, productId} = req.body;
+            const favoriteData = await UserService.addFavorite(userId, productId);
+            return res.json(favoriteData)
+        } catch (e){
+            next(e);
+        }
+    }
+
+    async addBasket(req, res, next){
+        try {
+            const {userId, productId} = req.body;
+            const favoriteData = await UserService.addBasket(userId, productId);
+            return res.json(favoriteData)
+        } catch (e){
+            next(e);
+        }
+    }
+
+    async getBasket(req, res, next){
+        try {
+            const {userId} = req.query;
+            const favoriteData = await UserService.getBasket(userId);
+            return res.json(favoriteData)
+        } catch (e){
+            next(e);
+        }
+    }
+
+    async getFavorite(req, res, next){
+        try {
+            const {userId} = req.query;
+            const favoriteData = await UserService.getFavorite(userId);
+            return res.json(favoriteData)
+        } catch (e){
+            next(e);
+        }
+    }
+
     async loginAdmin(req, res, next){
         try {
             const {email, password} = req.body;

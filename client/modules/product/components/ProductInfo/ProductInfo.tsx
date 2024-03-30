@@ -7,11 +7,10 @@ import {ProductGallerySlider} from '@/src/components/ProductGallerySlider/Produc
 import {useOneProduct} from '@/src/http/hooks/useOneProduct';
 
 interface Props {
-  product: IProduct;
+  product: IProduct | undefined;
 }
 
-const ProductInfo = (props: Props) => {
-  const {data} = useOneProduct();
+const ProductInfo = ({product}: Props) => {
 
   return (
     <div className={s.container}>
@@ -33,7 +32,7 @@ const ProductInfo = (props: Props) => {
         {/*  preloaderSize='large'*/}
         {/*/>*/}
         <div className={s.productWrapper}>
-         <ProductGallerySlider images={data?.imagesUrl || []}/>
+         <ProductGallerySlider images={product?.imagesUrl || []}/>
         </div>
 
         <div className={s.infoCharacters}>

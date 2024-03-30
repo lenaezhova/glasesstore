@@ -1,10 +1,14 @@
 const UserModel = require('../models/user-model')
+const BasketModel = require('../models/UserModels/basket-model')
+const FavoriteModel = require('../models/UserModels/favorite-model')
+
 const bcrypt = require('bcrypt')
 const uuid = require('uuid');
 const mailService = require('./mail-service');
 const tokenService = require('./token-service');
 const UserDto = require('../dtos/user-dto');
 const ApiError = require('../exceptions/api-error');
+const deleteElementFromArrayByIndex = require("../helpers/deleteElementFromArrayByIndex");
 class UserService {
     async registration(email, password, name, surname){
         const candidate = await UserModel.findOne({email})
@@ -128,5 +132,57 @@ class UserService {
         return users;
     }
 
+    async addFavorite(userId, productId){
+        const userData = await UserModel.findById(userId);
+        if (userData?.favoriteId) {
+            const favoriteData = await FavoriteModel.findById(userData.favoriteId);
+            let productsId = favoriteData.productsId;
+            const indexProduct = productsId.findIndex(el => el === productId);
+            if (indexProduct >= 0) {
+                productsId = deleteElementFromArrayByIndex(favoriteData.productsId, indexProduct);
+            } else {
+                productsId.push(productId)
+            }
+            favoriteData.productsId = productsId;
+            await favoriteData.save();
+            return favoriteData;
+        }
+        const newFavroiteData = await FavoriteModel.create({productsId: [productId]});
+        userData.favoriteId = newFavroiteData.id;
+        await userData.save();
+        return newFavroiteData;
+    }
+
+    async addBasket(userId, productId){
+        const userData = await UserModel.findById(userId);
+        if (userData?.basketId) {
+            const basketData = await BasketModel.findById(userData.basketId);
+            basketData.productsId.push(productId);
+            await basketData.save();
+            return basketData;
+        }
+        const newBasketData = await BasketModel.create({productsId: [productId]});
+        return newBasketData;
+    }
+
+    async getBasket(userId){
+        const userData = await UserModel.findById(userId);
+        if (userData?.basketId) {
+            const basketData = await FavoriteModel.findById(userData.basketId);
+            return basketData;
+        }
+
+        return [];
+    }
+
+    async getFavorite(userId){
+        const userData = await UserModel.findById(userId);
+        if (userData?.favoriteId) {
+            const favoriteData = await FavoriteModel.findById(userData.favoriteId);
+            return favoriteData;
+        }
+
+        return [];
+    }
 }
 module.exports = new UserService();

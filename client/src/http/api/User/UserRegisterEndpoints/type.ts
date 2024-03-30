@@ -21,3 +21,13 @@ export interface IPostRefreshResponse {
   accessToken: string;
   userId: string;
 }
+
+export interface IPostAddFavorite {
+  userId: string;
+  productId: string;
+}
+
+export interface IPostAddBasket {
+  userId: string;
+  productId: string;
+}

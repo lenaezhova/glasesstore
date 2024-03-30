@@ -9,6 +9,7 @@ import {useAuthStore} from '@/modules/user/store/store';
 import {useAuthModalStore} from '@/modules/modals/authentication/store/store';
 import useFormInstance from 'antd/es/form/hooks/useFormInstance';
 import {useForm} from 'antd/es/form/Form';
+import {useInvalidateUserSubInfo} from "@/src/http/hooks/useInvalidateUserSubInfo";
 
 interface IDataForm {
   email: string;
@@ -25,6 +26,7 @@ const SignInForm = ({form}: Props) => {
   const {mutateAsync} = useMutation({
     mutationFn: $glassesApi.User.registerEndpoints.login
   })
+  const {ivalidateAsync} = useInvalidateUserSubInfo();
 
   const submitForm = async (data : IDataForm) => {
     try {
@@ -34,6 +36,7 @@ const SignInForm = ({form}: Props) => {
       setUserId(response.userId)
       setIsAuth(true);
       setIsVisibleAuthModal(false);
+      await ivalidateAsync();
     } catch {
       message.error('Ошибка при автризации')
     }

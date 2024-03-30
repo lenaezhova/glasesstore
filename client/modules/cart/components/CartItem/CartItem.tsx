@@ -61,7 +61,7 @@ const CartItem = (props: Props) => {
 
           <div className={s.containerIcons}>
             <CartDelete className={s.icon} product={cartProduct.product}/>
-            <FavoriteAdd product={cartProduct.product}/>
+            {/*<FavoriteAdd product={cartProduct.product}/>*/}
           </div>
 
         </div>

@@ -8,29 +8,31 @@ import FavoriteAdd from '@/src/components/FavoriteAdd/FavoriteAdd';
 import BuyOrCount from '@/src/components/BuyOrCount/BuyOrCount';
 import Link from 'next/link';
 import {IProduct} from '@/src/http/api/Product/ProductInfoEndpoints/type';
-
+import {useOneProduct} from "@/src/http/hooks/useOneProduct";
+import imagesLogo from 'public/logo.jpg'
 interface Props {
-  product: IProduct;
+  product?: IProduct;
+  productId?: string;
 }
 
-const CardCatalogItem = (props: Props) => {
+const CardCatalogItem = ( {product, productId}: Props) => {
   const mainContainerRef = useRef<any>();
   const isHovering = useIsHover(mainContainerRef);
   const buyOrCountRef = useRef<any>();
   const favoriteRef = useRef<any>();
   const router = useRouter();
-  const {product} = props;
+  let newProduct = product;
+  const {data} = useOneProduct(productId)
+  if (productId) newProduct = data;
 
-  const handleRedirectToProduct = useCallback((event: any) => {
-    // if (!buyOrCountRef.current.contains(event.target) &&
-    //   !favoriteRef.current.contains(event.target)
-    // ) {
-      router.push('/product/' + product._id);
-    // }
-  }, [product._id, router]);
+  const handleRedirectToProduct = (event: any) => {
+    if (!buyOrCountRef.current?.contains(event.target) && !favoriteRef.current?.contains(event.target)) {
+      router.push('/product/' + newProduct?._id);
+    }
+  };
 
   return (
-    <div ref={mainContainerRef} key={product._id} className={s.block} onClick={handleRedirectToProduct}>
+    <div ref={mainContainerRef} key={newProduct?._id} className={s.block} onClick={handleRedirectToProduct}>
       <div className={s.itemElement}>
         <div
           className={s.imageContainer}>
@@ -38,33 +40,33 @@ const CardCatalogItem = (props: Props) => {
             className={s.imageWrapper}
             sizes='100vw'
             imgClassName={s.img}
-            src={product.imagesUrl[0]}
-            alt={''}
+            src={newProduct?.imagesUrl[0] || imagesLogo}
+            alt={'image' + newProduct?._id}
             priority={true}
             objectFit='contain'
             preloaderSize='large'
           />
-          {/*{isHovering &&*/}
-          {/*  <div ref={favoriteRef} className={s.heart}>*/}
-          {/*    <FavoriteAdd product={product}/>*/}
-          {/*  </div>*/}
-          {/*}*/}
+          {isHovering &&
+            <div ref={favoriteRef} className={s.heart}>
+              <FavoriteAdd id={newProduct?._id}/>
+            </div>
+          }
         </div>
 
         <div className={s.infoContainer}>
           <div className={s.infoTitleContainer}>
-            <Link href={'/product/' + product._id} className={s.itemTitle}>{product.name}</Link>
+            <Link href={'/product/' + newProduct?._id} className={s.itemTitle}>{newProduct?.name}</Link>
             {/*<Reviews average={product.rating} classStar={s.classStar} classReviewsText={s.classReviewsText}/>*/}
           </div>
 
           <div className={s.infoPrice}>
-            <div className={s.itemPrice}>{product.price} ₽</div>
-            <div ref={buyOrCountRef}>
-              <BuyOrCount
-                product={product}
-                classNameCounter={s.counter}
-                classNameButton={s.buyButton}/>
-            </div>
+            <div className={s.itemPrice}>{newProduct?.price} ₽</div>
+            {/*<div ref={buyOrCountRef}>*/}
+            {/*  <BuyOrCount*/}
+            {/*    product={newProduct}*/}
+            {/*    classNameCounter={s.counter}*/}
+            {/*    classNameButton={s.buyButton}/>*/}
+            {/*</div>*/}
           </div>
 
         </div>

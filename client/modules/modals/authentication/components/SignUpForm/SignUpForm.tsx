@@ -1,11 +1,12 @@
 'use client';
 import s from './SignUpForm.module.scss';
-import {Form, FormInstance, Input} from 'antd';
+import {Form, FormInstance, Input, message} from 'antd';
 import {rules} from '@/src/helpers/rules/rules';
 import clsx from 'clsx';
 import {useMutation} from '@tanstack/react-query';
 import {$glassesApi} from '@/src/http/api/api';
 import {useForm} from 'antd/es/form/Form';
+import {useInvalidateUserSubInfo} from "@/src/http/hooks/useInvalidateUserSubInfo";
 
 interface IDataForm {
   email: string,
@@ -23,10 +24,16 @@ const SignUpForm = (props : Props) => {
   const {mutateAsync, isLoading} = useMutation({
     mutationFn: $glassesApi.User.registerEndpoints.registration
   })
+  const {ivalidateAsync} = useInvalidateUserSubInfo();
   const submitForm = async (data : IDataForm) => {
-    const response =  await mutateAsync(data);
-    localStorage.setItem('token', response.accessToken);
-    localStorage.setItem('refreshToken', response.refreshToken);
+    try {
+      const response =  await mutateAsync(data);
+      localStorage.setItem('token', response.accessToken);
+      localStorage.setItem('refreshToken', response.refreshToken);
+      await ivalidateAsync();
+    } catch (e) {
+      message.error('Ошибка при регистрации');
+    }
   };
 
   return (

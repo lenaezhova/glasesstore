@@ -64,7 +64,6 @@ class ProductService {
     if (statusDto)
         throw ApiError.BadRequest(`Статуc уже существует`)
     const res = await StatusModel.create({name});
-    console.log(res);
     return res;
   }
 

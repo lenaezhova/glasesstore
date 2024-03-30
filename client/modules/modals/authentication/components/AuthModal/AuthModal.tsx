@@ -8,6 +8,7 @@ import {CustomModal} from '@/src/components/UI/CustomModal/CustomModal';
 import SignUpForm from '@/modules/modals/authentication/components/SignUpForm/SignUpForm';
 import {useCallback, useState} from 'react';
 import {useAuthStore} from '@/modules/user/store/store';
+import {useInvalidateUserSubInfo} from "@/src/http/hooks/useInvalidateUserSubInfo";
 
 const {Link} = Typography;
 

@@ -12,7 +12,7 @@ import SwiperProducts from '@/src/components/SwiperProducts/SwiperProducts';
 import {useOneProduct} from '@/src/http/hooks/useOneProduct';
 
 interface Props {
-  id: number | string;
+  id: string;
 }
 
 const ProductBody = (props : Props) => {
@@ -43,7 +43,7 @@ const ProductBody = (props : Props) => {
       <div className={s.block}>
         <div className={s.containerProduct}>
           <ProductInfo product={data} />
-          <FieldBuy product={data} />
+          <FieldBuy id={id} />
         </div>
 
         <div className={s.swiper}>

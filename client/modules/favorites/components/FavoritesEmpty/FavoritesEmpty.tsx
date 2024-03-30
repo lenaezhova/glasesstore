@@ -3,6 +3,8 @@ import { Button } from 'antd';
 import Image from 'next/image';
 import HeartSVG from '@/public/images/heart.svg';
 import { useRouter } from 'next/navigation';
+import {useUserInfo} from "@/src/http/hooks/useUserInfo";
+import {useAuthStore} from "@/modules/user/store/store";
 
 const FavoritesEmpty = () => {
   const router = useRouter();

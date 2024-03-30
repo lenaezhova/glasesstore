@@ -7,9 +7,11 @@ import { useAuthStore } from '@/modules/user/store/store';
 import {useMutation} from '@tanstack/react-query';
 import {$glassesApi} from '@/src/http/api/api';
 import clsx from 'clsx';
+import {useInvalidateUserSubInfo} from "@/src/http/hooks/useInvalidateUserSubInfo";
 
 const PersonalSider = () => {
-  const {setIsAuth} = useAuthStore(state => state);
+  const {setIsAuth, setUserId} = useAuthStore(state => state);
+  const {ivalidateAsync} = useInvalidateUserSubInfo();
   const {mutateAsync} = useMutation({
     mutationFn: $glassesApi.User.registerEndpoints.logout
   })
@@ -20,6 +22,8 @@ const PersonalSider = () => {
       localStorage.removeItem('token');
       localStorage.removeItem('refreshToken');
       setIsAuth(false);
+      setUserId(undefined);
+      await ivalidateAsync();
     } catch (e) {}
   }
 
@@ -30,7 +34,7 @@ const PersonalSider = () => {
       )}
       <Button
           danger
-          onClick={() => handleLogout()}
+          onClick={handleLogout}
           className={clsx('flex-center', s.siderContainerItem)}
       >
         Выйти

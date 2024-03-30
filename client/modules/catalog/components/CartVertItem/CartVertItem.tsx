@@ -55,9 +55,9 @@ const CartVertItem = (props: Props) => {
             {brand}
           </div>
 
-          <div className={s.containerIcons}>
-            <FavoriteAdd product={product}/>
-          </div>
+          {/*<div className={s.containerIcons}>*/}
+          {/*  <FavoriteAdd product={product}/>*/}
+          {/*</div>*/}
 
         </div>
 

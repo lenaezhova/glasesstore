@@ -22,7 +22,6 @@ const upload = multer({
 router.post("/create", authMiddleware, upload.single("file"), csvController.create);
 router.get("/:id", async (req, res) => {
   try {
-    console.log(req.params.id);
     const image = await ImageModel.findById(req.params.id);
     res.contentType(image.contentType);
     res.send(image.data);

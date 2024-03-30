@@ -3,39 +3,30 @@ import s from './FieldBuy.module.scss';
 import { Button } from 'antd';
 import InStockCounter from '@/src/components/UI/InStockCounter/InStockCounter';
 import { useState, useEffect } from 'react';
-import {
-  addNewInfoInCart,
-  addProductInCart,
-  checkProductInCart,
-  getSingleProductInCart, removeProductInCart
-} from '@/modules/cart/api/client/api';
 import { useRouter } from 'next/navigation';
 import { useCartStore } from '@/modules/cart/store/store';
 import {IProduct} from '@/src/http/api/Product/ProductInfoEndpoints/type';
 import FavoriteAddSVG from '@/src/components/UI/favoriteAddSVG/favoriteAddSVG';
-import {
-  addProductInFavorites,
-  checkProductInFavorites,
-  removeProductFromFavorites
-} from '@/modules/favorites/api/client/api';
 import { useFavoriteStore } from '@/modules/favorites/store/store';
 import {useOneProduct} from '@/src/http/hooks/useOneProduct';
+import {useAllFavorite} from "@/src/http/hooks/useAllFavroite";
 
 interface Props {
-  product: IProduct
+  id: string | undefined;
 }
 
-const FieldBuy = (props : Props) => {
+const FieldBuy = ({id} : Props) => {
   const [count, setCount] = useState(0);
   const [inCart, setInCart] = useState(false);
-  const [inFavorite, setInFavorite] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
 
   const { setProducts } = useCartStore(state => state);
   const { setProductsInFavoritesStore } = useFavoriteStore(state => state);
+  const {checkProductInFavorite, addInFavoriteAsync} = useAllFavorite();
+  const inFavorite = checkProductInFavorite(id)
 
   const router = useRouter();
-  const {data: product} = useOneProduct();
+  const {data: product} = useOneProduct(id);
   // const {product} = props;
   // const {id, price, stock} = product;
 
@@ -55,16 +46,7 @@ const FieldBuy = (props : Props) => {
   // }, [id]);
 
   async function handleAddFavorite () {
-    console.log('favorite');
-    // let result = [] as IProduct[];
-    // if (checkProductInFavorites(id)) {
-    //   result = await removeProductFromFavorites(id);
-    //   setInFavorite(false);
-    // } else {
-    //   result = await addProductInFavorites(product);
-    //   setInFavorite(true);
-    // }
-    // setProductsInFavoritesStore(result);
+    await addInFavoriteAsync(id);
   }
 
   async function handleBuy() {

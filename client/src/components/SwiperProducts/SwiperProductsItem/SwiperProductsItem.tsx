@@ -43,11 +43,11 @@ const SwiperProductsItem = (props: Props) => {
             objectFit='cover'
             preloaderSize='large'
           />
-          {isHovering && (
-            <div ref={favoriteRef} className={s.heart}>
-              <FavoriteAdd product={product} />
-            </div>
-          )}
+          {/*{isHovering && (*/}
+          {/*  <div ref={favoriteRef} className={s.heart}>*/}
+          {/*    <FavoriteAdd product={product} />*/}
+          {/*  </div>*/}
+          {/*)}*/}
         </div>
         <div className={s.infoContainer}>
           <div className={s.infoTitleContainer}>
