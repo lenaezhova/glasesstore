@@ -25,7 +25,9 @@ export default function AuthProvider({children}: {children: React.ReactNode}) {
           setIsAuthLoading(false);
           setIsAuth(true);
         } catch (e){
-          message.error('Произошла ошибка при проверка авторизации')
+          setIsAuth(false);
+        } finally {
+          setIsAuthLoading(false);
         }
       } else {
         setIsAuthLoading(false);

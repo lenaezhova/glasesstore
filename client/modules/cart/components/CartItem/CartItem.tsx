@@ -1,5 +1,5 @@
 import s from './CartItem.module.scss';
-import {memo} from 'react';
+import {Dispatch, memo, SetStateAction, useEffect} from 'react';
 import PreloaderImage from '@/src/components/PreloaderImage/PreloaderImage';
 import clsx from 'clsx';
 import Link from 'next/link';
@@ -12,10 +12,21 @@ import logoPng from 'public/logo.jpg'
 interface Props {
   productId: string;
   className?: string;
+  setTotalPrice?: Dispatch<SetStateAction<number>>;
 }
 
-const CartItem = ({productId, className}: Props) => {
+const CartItem = ({productId, className, setTotalPrice}: Props) => {
   const {data, isLoading} = useOneProduct(productId);
+
+  const handleChange = (newCount: number, oldCount: number) => {
+    if (!data) return;
+    if (setTotalPrice) {
+      setTotalPrice(state => {
+        const newTotalPrice = state - (data?.price * oldCount);
+        return newTotalPrice + (data?.price * newCount);
+      })
+    }
+  }
 
   return (
     <div className={clsx(s.block, {}, [className])}>
@@ -61,8 +72,8 @@ const CartItem = ({productId, className}: Props) => {
             classNameCounter={s.counter}
             classNameButtonInc={s.counterButtonInc}
             classNameButtonDec={s.counterButtonDec}
+            onChange={handleChange}
           />
-
         </div>
       </div>
     </div>

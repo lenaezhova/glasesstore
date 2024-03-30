@@ -3,10 +3,14 @@ import { useCartStore } from '@/modules/cart/store/store';
 import { Button } from 'antd';
 import { useRouter } from 'next/navigation';
 import {useAllBasket} from "@/src/http/hooks/useAllBasket";
-const CartFiledBuy = () => {
-  const {data} = useAllBasket();
-  const totalPrice = data?.reduce((acc, el) => acc += el.count, 0) || 0;
+
+interface Props {
+  totalPrice: number;
+}
+
+const CartFiledBuy = ({totalPrice}: Props) => {
   const router = useRouter();
+  console.log(totalPrice)
 
   return (
     <div className={s.block}>

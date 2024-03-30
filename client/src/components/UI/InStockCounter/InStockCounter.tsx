@@ -10,10 +10,12 @@ interface Props {
   classNameButtonDec? : string;
   classNameCount?: string;
   ref?: RefObject<any>;
+  onChange?: (newCount: number, oldCount: number) => void;
 }
 
 const InStockCounter = (props: Props) => {
   const {
+    onChange,
     productId,
     className,
     classNameButtonInc,
@@ -25,6 +27,7 @@ const InStockCounter = (props: Props) => {
   const currentProduct = getProductFromCart(productId);
 
   async function addProduct() {
+    if (onChange && currentProduct?.count) onChange(currentProduct?.count + 1, currentProduct?.count);
     await addInCartAsync({
       productId: productId,
       typeAction: "add"
@@ -32,6 +35,7 @@ const InStockCounter = (props: Props) => {
   }
 
   async function removeProduct() {
+    if (onChange && currentProduct?.count) onChange(currentProduct?.count - 1 < 0 ? 0 : currentProduct?.count - 1, currentProduct?.count);
     await addInCartAsync({
       productId: productId,
       typeAction: "remove"
