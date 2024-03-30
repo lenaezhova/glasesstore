@@ -61,14 +61,13 @@ const CardCatalogItem = ( {product, productId}: Props) => {
 
           <div className={s.infoPrice}>
             <div className={s.itemPrice}>{newProduct?.price} ₽</div>
-            {/*<div ref={buyOrCountRef}>*/}
-            {/*  <BuyOrCount*/}
-            {/*    product={newProduct}*/}
-            {/*    classNameCounter={s.counter}*/}
-            {/*    classNameButton={s.buyButton}/>*/}
-            {/*</div>*/}
+            <div ref={buyOrCountRef}>
+              <BuyOrCount
+                productId={newProduct?._id}
+                classNameCounter={s.counter}
+                classNameButton={s.buyButton}/>
+            </div>
           </div>
-
         </div>
       </div>
     </div>

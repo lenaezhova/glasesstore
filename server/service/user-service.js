@@ -153,22 +153,57 @@ class UserService {
         return newFavroiteData;
     }
 
-    async addBasket(userId, productId){
+    async addBasket(userId, productId, count){
         const userData = await UserModel.findById(userId);
         if (userData?.basketId) {
             const basketData = await BasketModel.findById(userData.basketId);
-            basketData.productsId.push(productId);
+            let productsData = basketData.products;
+            const indexProduct = productsData.findIndex(el => el.productId === productId);
+            if (indexProduct >= 0) {
+                const newCount = count !== undefined ? productsData[indexProduct].count + count : 0;
+                if (newCount === 0) {
+                    productsData = deleteElementFromArrayByIndex(basketData.products, indexProduct);
+                } else {
+                    productsData[indexProduct] = {
+                        productId,
+                        count: newCount
+                    }
+                }
+            } else {
+                productsData.push({
+                    productId,
+                    count
+                })
+            }
+            basketData.products = productsData;
             await basketData.save();
             return basketData;
         }
-        const newBasketData = await BasketModel.create({productsId: [productId]});
+        const newBasketData = await BasketModel.create({products: [{
+                productId,
+                count: count || 1
+            }]});
+        userData.basketId = newBasketData.id;
+        await userData.save();
         return newBasketData;
     }
 
     async getBasket(userId){
         const userData = await UserModel.findById(userId);
         if (userData?.basketId) {
-            const basketData = await FavoriteModel.findById(userData.basketId);
+            const basketData = await BasketModel.findById(userData.basketId);
+            return basketData;
+        }
+
+        return [];
+    }
+
+    async clearBasket(userId){
+        const userData = await UserModel.findById(userId);
+        if (userData?.basketId) {
+            const basketData = await BasketModel.findById(userData.basketId);
+            basketData.products = [];
+            await basketData.save();
             return basketData;
         }
 

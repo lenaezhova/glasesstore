@@ -9,7 +9,9 @@ export const useOneProduct = (id: string | undefined) => {
     queryKey,
     queryFn: () => $glassesApi.Product.infoEndpoints.getOneProduct(id!!),
     retry: 1,
-    enabled: !!id
+    enabled: !!id,
+    staleTime: 100000,
+    refetchOnWindowFocus: false
   })
 
   return {

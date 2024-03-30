@@ -2,11 +2,6 @@ import {IProduct} from '@/modules/product/type/type';
 import {IProduct as IMyProduct} from '@/src/http/api/Product/ProductInfoEndpoints/type';
 
 
-export interface ICartProduct {
-  product: IProduct;
-  count: number;
-}
-
 export function getCart(): ICartProduct[] {
   return JSON.parse(localStorage.getItem('cart') || '[]');
 }

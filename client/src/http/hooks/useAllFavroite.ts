@@ -48,12 +48,7 @@ export const useAllFavorite = () => {
 
   const checkProductInFavorite = (id: string | undefined): boolean => {
     if (!id) return false;
-    if (isAuthorized) {
-      const {data} = results;
-      return !!data?.productsId?.find(el => el === id);
-    } else {
-      return !!productsId.find(el => el === id);
-    }
+    return !!data?.productsId?.find(el => el === id);
   }
 
   return {

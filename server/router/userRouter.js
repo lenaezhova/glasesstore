@@ -12,6 +12,7 @@ router.post('/login', userController.login);
 router.post('/add/favorite', userController.addFavorite);
 router.get('/favorite', userController.getFavorite);
 router.post('/add/basket', userController.addBasket);
+router.post('/clear/basket', userController.clearBasket);
 router.get('/basket', userController.getBasket);
 router.post('/admin/login', userController.loginAdmin);
 router.post('/update_user_information', userController.updateUserInformation);

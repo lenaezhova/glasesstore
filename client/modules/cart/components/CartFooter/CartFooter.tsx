@@ -15,7 +15,7 @@ const CartFooter = () => {
       return data.products.reduce((acc, el) => {
         let check = true;
         for (let i = 0; i < products.length; i++) {
-          if (products[i].product.id === el.id) {
+          if (products[i].productId === el.id) {
             check = false;
             break;
           }

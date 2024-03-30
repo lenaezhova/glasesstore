@@ -3,21 +3,21 @@ import {useCallback} from 'react';
 import {removeProductInCart} from '@/modules/cart/api/client/api';
 import {IProduct} from '@/modules/product/type/type';
 import TrashSVG from '@/src/components/UI/TrashSVG/TrashSVG';
+import {useAllBasket} from "@/src/http/hooks/useAllBasket";
 
 interface Props {
-  product: IProduct;
+  productId?: string;
   className?: string;
 }
 
-const CartDelete = (props: Props) => {
-  const {setProducts} = useCartStore((state) => state);
-
-  const {product, className} = props;
-
-  const handleDelete = useCallback(() => {
-    const res = removeProductInCart(product.id);
-    res.then((products) => setProducts(products));
-  }, []); // eslint-disable-line
+const CartDelete = ({productId, className}: Props) => {
+  const {addInCartAsync} = useAllBasket();
+  const handleDelete = async () => {
+    await addInCartAsync({
+      productId,
+      typeAction: "delete"
+    })
+  }
 
   return <TrashSVG className={className} onClick={handleDelete} />;
 };

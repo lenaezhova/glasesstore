@@ -1,5 +1,6 @@
 import $glassesApi from '@/src/http';
 import {
+  countBasketTypeAction,
   IPostAddBasket,
   IPostAddFavorite,
   IPostLoginRequest, IPostLoginResponse,
@@ -50,11 +51,24 @@ export default class UserRegisterEndpoints {
   };
 
   static addBasket = async (request: IPostAddBasket) => {
+    const count = request.typeAction ? countBasketTypeAction[request.typeAction] : request.count;
     const {data} = await $glassesApi.post(
       '/add/basket',
-      {...request}
+      {
+        ...request,
+        count
+      }
     );
 
     return data;
   };
+
+  static clearBasket = async (userId: string | undefined) => {
+    const {data} = await $glassesApi.post(
+      '/clear/basket',
+      {userId})
+
+    return data;
+  }
+
 }

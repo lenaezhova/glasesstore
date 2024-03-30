@@ -66,9 +66,19 @@ class UserController{
 
     async addBasket(req, res, next){
         try {
-            const {userId, productId} = req.body;
-            const favoriteData = await UserService.addBasket(userId, productId);
+            const {userId, productId, count} = req.body;
+            const favoriteData = await UserService.addBasket(userId, productId, count);
             return res.json(favoriteData)
+        } catch (e){
+            next(e);
+        }
+    }
+
+    async clearBasket(req, res, next){
+        try {
+            const {userId} = req.body;
+            const basketData = await UserService.clearBasket(userId);
+            return res.json(basketData)
         } catch (e){
             next(e);
         }
@@ -77,8 +87,8 @@ class UserController{
     async getBasket(req, res, next){
         try {
             const {userId} = req.query;
-            const favoriteData = await UserService.getBasket(userId);
-            return res.json(favoriteData)
+            const basketData = await UserService.getBasket(userId);
+            return res.json(basketData)
         } catch (e){
             next(e);
         }

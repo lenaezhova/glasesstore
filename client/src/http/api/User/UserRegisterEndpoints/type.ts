@@ -27,7 +27,17 @@ export interface IPostAddFavorite {
   productId: string;
 }
 
+export type TBasketTypeAction = 'delete' | 'add' | 'remove'
+
 export interface IPostAddBasket {
   userId: string;
   productId: string;
+  count?: number;
+  typeAction?: TBasketTypeAction;
+}
+
+export const countBasketTypeAction = {
+  'delete': undefined,
+  'add': 1,
+  'remove': -1
 }

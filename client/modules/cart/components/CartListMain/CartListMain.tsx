@@ -1,28 +1,26 @@
 import s from './CartListMain.module.scss';
-import {useCartStore} from '@/modules/cart/store/store';
 import CartItem from '@/modules/cart/components/CartItem/CartItem';
 import {Button} from 'antd';
-import {clearCart} from '@/modules/cart/api/client/api';
+import {useAllBasket} from "@/src/http/hooks/useAllBasket";
+import clsx from "clsx";
 
 const CartListMain = () => {
-  const {products, setProducts} = useCartStore();
-
-  function handleClearCart() {
-    clearCart();
-    setProducts([]);
+  const {data, clearBasketAsync} = useAllBasket();
+  async function handleClearCart() {
+    await clearBasketAsync();
   }
 
   return (
     <div className={s.block}>
       <Button onClick={handleClearCart}> Очистить корзину </Button>
       <div className={s.containerItems}>
-        {products.map((el, index) => {
-          return index < products.length - 1 ? (
-            <CartItem key={el.product.id} cartProduct={el} className={s.underline} />
-          ) : (
-            <CartItem key={el.product.id} cartProduct={el} />
-          );
-        })}
+        {data?.map((el, index) =>
+          <CartItem
+            key={el.productId}
+            productId={el.productId}
+            className={clsx({[s.underline]: index < data?.length - 1})}
+          />
+        )}
       </div>
     </div>
   );
