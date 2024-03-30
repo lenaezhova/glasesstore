@@ -60,7 +60,7 @@ const SwiperProductsItem = (props: Props) => {
             <div className={s.infoPrice}>
               <div className={s.itemPrice}>{product.price} ₽</div>
               <div ref={buyOrCountRef}>
-                <BuyOrCount product={product} classNameCounter={s.counter} classNameButton={s.buyButton} />
+                {/*<BuyOrCount product={product} classNameCounter={s.counter} classNameButton={s.buyButton} />*/}
               </div>
             </div>
           )}

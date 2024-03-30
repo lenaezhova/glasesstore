@@ -5,7 +5,6 @@ import clsx from 'clsx';
 import Link from 'next/link';
 import { IProduct } from '@/modules/product/type/type';
 import Reviews from '@/src/components/UI/Reviews/Reviews';
-import FavoriteAdd from '@/src/components/FavoriteAdd/FavoriteAdd';
 import BuyOrCount from '@/src/components/BuyOrCount/BuyOrCount';
 
 interface Props {
@@ -66,7 +65,7 @@ const CartVertItem = (props: Props) => {
           <div className={s.containerPrice}>
             {price} ₽
           </div>
-          <BuyOrCount product={product} classNameButton={s.buyButton} classNameCounter={s.counter}/>
+          {/*<BuyOrCount product={product} classNameButton={s.buyButton} classNameCounter={s.counter}/>*/}
 
         </div>
       </div>
