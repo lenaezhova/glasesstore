@@ -1,8 +1,6 @@
 import {$glassesApi} from '@/src/http/api/api';
 import {IGetResponse, TInfoProduct} from '@/src/http/api/Product/ProductAdminGetEndpoints/type';
 
-
-
 export const categoryProduct: {
   [key: string | TInfoProduct]: {
     name: string,
@@ -55,6 +53,6 @@ export const categoryProduct: {
     queryKey: ['typeLens'],
     queryFn: () => $glassesApi.Product.getEndpoints.getAllTypeLens()
   }
-}
+};
 
-export const arrayCategoryProduct = Object.values(categoryProduct)
+export const arrayCategoryProduct = Object.values(categoryProduct);

@@ -8,7 +8,7 @@ const ProductGallerySliderMaskedModal = ({image}: {image: string}) => {
 
   const handleOpenMasked = () => {
     setIsModal(true);
-  }
+  };
 
   return (
     <>

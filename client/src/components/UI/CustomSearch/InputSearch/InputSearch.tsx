@@ -54,28 +54,28 @@ const InputSearch = (props: Props) => {
           onChange={(e) => setValueInput(e.target.value)}
         />
         <button className={s.searchButton}>
-          <SearchOutlined className={s.searchIcon}  />
+          <SearchOutlined className={s.searchIcon} />
         </button>
       </div>
-      {/*<div ref={inputContainerRef}>*/}
-      {/*  {isFocus && (*/}
-      {/*    <div className={s.searchInputField}>*/}
-      {/*      {loading ? (*/}
-      {/*        <div className={s.spin}>*/}
-      {/*          <Spin size={'large'} />*/}
-      {/*        </div>*/}
-      {/*      ) : (*/}
-      {/*        <div className={s.listProducts}>*/}
-      {/*          {products.map((el) => (*/}
-      {/*            <Link href={'/product/' + el.id} key={el.id}>*/}
-      {/*              <InputSearchItem onClick={() => handleClickProductItem(el.title)} product={el} />*/}
-      {/*            </Link>*/}
-      {/*          ))}*/}
-      {/*        </div>*/}
-      {/*      )}*/}
-      {/*    </div>*/}
-      {/*  )}*/}
-      {/*</div>*/}
+      {/* <div ref={inputContainerRef}> */}
+      {/*  {isFocus && ( */}
+      {/*    <div className={s.searchInputField}> */}
+      {/*      {loading ? ( */}
+      {/*        <div className={s.spin}> */}
+      {/*          <Spin size={'large'} /> */}
+      {/*        </div> */}
+      {/*      ) : ( */}
+      {/*        <div className={s.listProducts}> */}
+      {/*          {products.map((el) => ( */}
+      {/*            <Link href={'/product/' + el.id} key={el.id}> */}
+      {/*              <InputSearchItem onClick={() => handleClickProductItem(el.title)} product={el} /> */}
+      {/*            </Link> */}
+      {/*          ))} */}
+      {/*        </div> */}
+      {/*      )} */}
+      {/*    </div> */}
+      {/*  )} */}
+      {/* </div> */}
     </div>
   );
 };

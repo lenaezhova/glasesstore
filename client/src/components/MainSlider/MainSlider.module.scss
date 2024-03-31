@@ -1,0 +1,267 @@
+@import "src/styles/mixins";
+
+.swiperWrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+.arrows {
+  display: flex;
+  align-items: center;
+
+  img:first-of-type {
+    transform: rotate(-180deg);
+  }
+
+  img {
+    opacity: 0.5;
+    transition: $trn;
+    padding: 10px;
+    cursor: pointer;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+.sliderInfo {
+  @include container;
+  position: absolute;
+  bottom: 0px;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  @media screen and (max-width: $breakpoint-sm) {
+    align-items: center;
+  }
+}
+
+.leftControl {
+  display: flex;
+  align-items: center;
+  gap: 70px;
+
+  @media screen and (max-width: $breakpoint-sm) {
+    gap: 30px;
+  }
+}
+
+.arrows {
+  @media screen and (max-width: $breakpoint-sm) {
+    span {
+      display: none;
+    }
+  }
+}
+
+.currentSlide {
+  color: white;
+  @include fluid(font-size, 18px, 32px);
+  font-weight: 300;
+  font-family: var(--bebas-font);
+
+  span {
+    font-family: var(--bebas-font);
+    font-weight: 400;
+    @include fluid(font-size, 32px, 64px);
+    margin-right: 5px;
+  }
+}
+
+.bannerSwiper {
+  font-family: var(--bebas-font);
+  display: flex;
+  flex-direction: column;
+  letter-spacing: 0.15em;
+  line-height: 1;
+  width: 100%;
+  min-height: calc(100vh - 92px);
+  color: #fff;
+  position: relative;
+
+  @media screen and (max-width: 830px) {
+    height: calc(100vh - 160px) !important;
+    min-height: unset;
+  }
+
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+
+    @media screen and (max-width: 525px) {
+      object-position: top left;
+    }
+  }
+}
+
+.banner {
+  @include container;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  gap: 80px;
+  padding-bottom: 103px;
+
+
+  &__heading {
+    height: 800px;
+    display: flex;
+    flex-direction: column;
+
+    @media screen and (max-width: 2500px) {
+      height: 700px;
+    }
+
+    @media screen and (max-width: 2000px) {
+      margin-top: 100px;
+      height: 500px;
+    }
+  }
+
+  &__title {
+    color: black;
+    font-size: 40px;
+    line-height: 50px;
+    text-align: center;
+    font-family: var(--bebas-font);
+    text-transform: uppercase;
+
+    @media screen and (max-width: 2000px) {
+     font-size: 24px;
+      line-height: 30px;
+    }
+
+    @media screen and (max-width: $breakpoint-sm) {
+      font-size: 32px;
+    }
+  }
+
+  &__text {
+    margin-top: 590px;
+    color: black;
+    font-size: 24px;
+    text-align: center;
+    opacity: .66;
+    font-family: var(--bebas-font);
+
+    @media screen and (max-width: 2500px) {
+      margin-top: 550px;
+    }
+
+    @media screen and (max-width: 2000px) {
+      margin-top: 300px;
+      font-size: 18px;
+    }
+
+    @media screen and (max-width: $breakpoint-sm) {
+      font-size: 18px;
+    }
+  }
+
+  &__item {
+    position: relative;
+    letter-spacing: normal;
+    line-height: 1.2;
+    display: flex;
+    gap: 10px;
+  }
+
+  &__img {
+    @include fluid(width, 45px, 60px);
+    @include fluid(height, 45px, 60px);
+    position: relative;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+
+    @media screen and (max-width: 525px) {
+      display: none;
+    }
+  }
+
+  &__description {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    row-gap: 5px;
+    font-size: 18px;
+
+    @media screen and (max-width: $breakpoint-md) {
+      width: 50%;
+    }
+
+    @media screen and (max-width: 425px) {
+      width: 80%;
+    }
+
+    @media screen and (max-width: $breakpoint-es) {
+      display: -webkit-box;
+      -webkit-line-clamp: 4;
+      -webkit-box-orient: vertical;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+  }
+
+  &__subtitle {
+    @include fluid(font-size, 14px, 16px);
+    font-weight: bold;
+  }
+
+  &__info {
+    width: 75%;
+    @include fluid(font-size, 12px, 14px);
+    opacity: 0.6;
+    font-weight: 400;
+    line-height: 14px;
+
+    //display: -webkit-box;
+    //-webkit-line-clamp: 7;
+    //-webkit-box-orient: vertical;
+    //text-overflow: ellipsis;
+    //overflow: hidden;
+  }
+}
+
+.prev {
+  transition: $trn;
+  cursor: pointer;
+  margin-right: 20px;
+  opacity: 0.5;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.next {
+  transition: opacity 0.33s ease-in-out;
+  opacity: 0.5;
+  cursor: pointer;
+  rotate: 180deg;
+
+  &:hover {
+    opacity: 1;
+  }
+}

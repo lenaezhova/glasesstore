@@ -33,7 +33,11 @@ const nextConfig = {
       {
         protocol: 'https',
         hostname: 'glasesstoreserver.vercel.app'
-      }
+      },
+      {
+        protocol: 'http',
+        hostname: 'localhost'
+      },
     ]
   }
 };

@@ -2,7 +2,7 @@ import React, { FC, useState, useEffect } from 'react';
 import { Image } from 'antd';
 
 import s from './ProductGallerySlide.module.scss';
-import {useMedia} from "react-use";
+import {useMedia} from 'react-use';
 
 interface productgallerySlideProps {
   dataForPreview: string;
@@ -13,12 +13,12 @@ interface productgallerySlideProps {
 export const ProductGallerySlide: FC<productgallerySlideProps> = ({
   dataForPreview,
   dataIndex,
-  previewImages,
+  previewImages
 }) => {
   const [previewIndex, setPreviewImageIndex] = useState(dataIndex);
   const [isOpen, setIsOpen] = useState(false);
   const is590px = useMedia('(max-width: 590px)');
-    const is380px = useMedia('(max-width: 380px)');
+  const is380px = useMedia('(max-width: 380px)');
 
   const onChangePriviewHandler = (current: number, prevCurrent: number) => {
     if (current > prevCurrent) {
@@ -34,16 +34,16 @@ export const ProductGallerySlide: FC<productgallerySlideProps> = ({
   };
 
   const getHeight = () => {
-      if (is380px) {
-          return 190
-      }
+    if (is380px) {
+      return 190;
+    }
 
-      if (is590px) {
-          return 250
-      }
+    if (is590px) {
+      return 250;
+    }
 
-      return 300
-  }
+    return 300;
+  };
 
   return (
     <Image.PreviewGroup
@@ -53,7 +53,7 @@ export const ProductGallerySlide: FC<productgallerySlideProps> = ({
         current: previewIndex,
         onChange: onChangePriviewHandler,
         onVisibleChange: onChangePreviewVisibility,
-        toolbarRender: (original, info) =>  original,
+        toolbarRender: (original, info) => original,
         imageRender: (original) => original
       }}
     >

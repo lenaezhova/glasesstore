@@ -1,5 +1,6 @@
 import $glassesApi from '@/src/http';
 import {ICreateProductResponse, ICreateResponse} from '@/src/http/api/Product/ProductAdminCreateEndpoints/type';
+import {IBanner} from "@/src/http/api/Product/ProductAdminGetEndpoints/type";
 
 export default class ProductAdminCreateEndpoints {
 
@@ -91,5 +92,15 @@ export default class ProductAdminCreateEndpoints {
     );
 
     return data;
+  };
+
+  static addNowBuyBanner = async (productIds: string[]): Promise<IBanner> => {
+    const {data} = await $glassesApi.post(
+      '/product/add_banner', {
+        title: 'NowBuy',
+        productIds
+      }
+    );
+    return data
   };
 }

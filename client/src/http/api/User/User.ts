@@ -2,6 +2,6 @@ import UserRegisterEndpoints from '@/src/http/api/User/UserRegisterEndpoints/Use
 import UserInfoEndpoints from '@/src/http/api/User/UserInfoEndpoints/UserInfoEndpoints';
 
 export default class UserEndpoints {
-  static registerEndpoints = UserRegisterEndpoints
-  static infoEndpoints = UserInfoEndpoints
+  static registerEndpoints = UserRegisterEndpoints;
+  static infoEndpoints = UserInfoEndpoints;
 }

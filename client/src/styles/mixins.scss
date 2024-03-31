@@ -66,3 +66,17 @@ $p: 15px;
     #{$property}: $f-max;
   }
 }
+
+$trn: 0.38s ease-in-out;
+$headerBgColor: var(--headerBgColor);
+$headerBorderColor: var(--headerBorderColor);
+$headerButtonMenuBorderColor: var(--headerButtonMenuBorderColor);
+$textColor: var(--text-color);
+$primaryBg: var(--primary-bg);
+$primary: var(--primary);
+$textDarkGray: var(--text-darkgray);
+$closeIconCl: var(--close-icon-bg);
+$closeIconHover: var(--close-icon-hover);
+$blockRadius: 10px;
+$headerBgWithoutOpacity: var(--headerBgWithoutOpacity);
+$background: var(--background);

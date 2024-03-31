@@ -10,7 +10,7 @@ export default class ProductAdminGetEndpoints {
     return data;
   };
 
-  static getAllDesign = async (): Promise<IGetResponse[]>  => {
+  static getAllDesign = async (): Promise<IGetResponse[]> => {
     const {data} = await $glassesApi.get(
       '/product/all/design'
     );
@@ -18,7 +18,7 @@ export default class ProductAdminGetEndpoints {
     return data;
   };
 
-  static getAllBrand = async (): Promise<IGetResponse[]>  => {
+  static getAllBrand = async (): Promise<IGetResponse[]> => {
     const {data} = await $glassesApi.get(
       '/product/all/brand'
     );
@@ -26,7 +26,7 @@ export default class ProductAdminGetEndpoints {
     return data;
   };
 
-  static getAllColor = async (): Promise<IGetResponse[]>  => {
+  static getAllColor = async (): Promise<IGetResponse[]> => {
     const {data} = await $glassesApi.get(
       '/product/all/color'
     );
@@ -34,7 +34,7 @@ export default class ProductAdminGetEndpoints {
     return data;
   };
 
-  static getAllMaterial = async (): Promise<IGetResponse[]>  => {
+  static getAllMaterial = async (): Promise<IGetResponse[]> => {
     const {data} = await $glassesApi.get(
       '/product/all/material'
     );
@@ -42,7 +42,7 @@ export default class ProductAdminGetEndpoints {
     return data;
   };
 
-  static getAllTargetGroup = async ():Promise<IGetResponse[]>  => {
+  static getAllTargetGroup = async ():Promise<IGetResponse[]> => {
     const {data} = await $glassesApi.get(
       '/product/all/targetGroup'
     );
@@ -50,7 +50,7 @@ export default class ProductAdminGetEndpoints {
     return data;
   };
 
-  static getAllTypeLens = async (): Promise<IGetResponse[]>  => {
+  static getAllTypeLens = async (): Promise<IGetResponse[]> => {
     const {data} = await $glassesApi.get(
       '/product/all/typeLens'
     );
@@ -58,7 +58,7 @@ export default class ProductAdminGetEndpoints {
     return data;
   };
 
-  static getAllType = async (): Promise<IGetResponse[]>  => {
+  static getAllType = async (): Promise<IGetResponse[]> => {
     const {data} = await $glassesApi.get(
       '/product/all/type'
     );
@@ -66,7 +66,7 @@ export default class ProductAdminGetEndpoints {
     return data;
   };
 
-  static getAllOptics = async (): Promise<IGetResponse[]>  => {
+  static getAllOptics = async (): Promise<IGetResponse[]> => {
     const {data} = await $glassesApi.get(
       '/product/all/optics'
     );

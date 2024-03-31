@@ -6,3 +6,8 @@ export interface IProduct {
   description?: string,
   imagesUrl: string[]
 }
+
+export interface IBanner {
+  title: string,
+  productIds: string[]
+}

@@ -1,6 +1,5 @@
-
 import TrashSVG from '@/src/components/UI/TrashSVG/TrashSVG';
-import {useAllBasket} from "@/src/http/hooks/useAllBasket";
+import {useAllBasket} from '@/src/http/hooks/useAllBasket';
 
 interface Props {
   productId?: string;
@@ -12,9 +11,9 @@ const CartDelete = ({productId, className}: Props) => {
   const handleDelete = async () => {
     await addInCartAsync({
       productId,
-      typeAction: "delete"
-    })
-  }
+      typeAction: 'delete'
+    });
+  };
 
   return <TrashSVG className={className} onClick={handleDelete} />;
 };

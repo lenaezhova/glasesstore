@@ -7,8 +7,7 @@
   --header-background: url(../../public/images/violet.svg) center center repeat,
   linear-gradient(to right bottom,#7b6cff 0%,#645ac4 100%) center center no-repeat;
   --header-background-size: 24px 24px, cover;
-  --footer-background: url(../../public/images/violet.svg) center center repeat,
-  linear-gradient(to right bottom,#7b6cff 0%,#645ac4 100%) center center no-repeat;
+  --footer-background: #222222;
   --footer-background-size: 24px 24px, cover;
   --filter-shadow: drop-shadow(3px 3px 10px rgba(7, 0, 0, 0.37));
   --bg-modal-color: white;
@@ -20,6 +19,17 @@
   --background-card: #FFFFF;
   --background-card-small: #eaeaea;
   --box-shadow-color: rgba(108, 120, 253, 0.2);
+  --text-color: #171717;
+  --headerBgColor: rgb(255 255 255 / 84%);
+  --headerBorderColor: rgb(0 0 0 / 8%);
+  --headerButtonMenuBorderColor: #cdcdcd;
+  --primary-bg: #ffae1d;
+  --primary: #ffae1d;
+  --text-darkgray: #828282;
+  --close-icon-bg: rgba(0, 0, 0, 0.3);
+  --close-icon-hover: black;
+  --headerBgWithoutOpacity: #fefefe;
+  --background: #f5f5f5;
 }
 
 [data-theme="dark"] {

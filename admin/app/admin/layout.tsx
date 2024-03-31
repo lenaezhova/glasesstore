@@ -14,11 +14,18 @@ const getItems = (router: any) => {
       icon: React.createElement(ProductOutlined),
       label: 'Товары',
 
-      children: [{
-        key: 'createProduct',
-        label: 'Создать товар',
-        onClick: () => router.push('/admin/createproduct')
-      }]
+      children: [
+        {
+          key: 'createProduct',
+          label: 'Создать товар',
+          onClick: () => router.push('/admin/createproduct')
+        },
+        {
+          key: 'createProduct',
+          label: 'Сейчас покупают',
+          onClick: () => router.push('/admin/nowbuy')
+        }
+      ]
     },
     {
       key: 'users',

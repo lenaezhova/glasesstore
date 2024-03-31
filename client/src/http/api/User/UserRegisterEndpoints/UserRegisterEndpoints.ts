@@ -66,9 +66,9 @@ export default class UserRegisterEndpoints {
   static clearBasket = async (userId: string | undefined) => {
     const {data} = await $glassesApi.post(
       '/clear/basket',
-      {userId})
+      {userId});
 
     return data;
-  }
+  };
 
 }

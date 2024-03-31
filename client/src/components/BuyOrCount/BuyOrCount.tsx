@@ -1,8 +1,7 @@
-
 import InStockCounter from '@/src/components/UI/InStockCounter/InStockCounter';
 import {Button} from 'antd';
-import {useAllBasket} from "@/src/http/hooks/useAllBasket";
-import {useEffect} from "react";
+import {useAllBasket} from '@/src/http/hooks/useAllBasket';
+import {useEffect} from 'react';
 
 interface Props {
   productId?: string;
@@ -14,13 +13,13 @@ interface Props {
   onChange?: (newCount: number, oldCount: number) => void;
 }
 const BuyOrCount = (props: Props) => {
-  const {productId,onChange, classNameButton, classNameCounter, classNameButtonInc, classNameButtonDec, classNameCount} = props;
+  const {productId, onChange, classNameButton, classNameCounter, classNameButtonInc, classNameButtonDec, classNameCount} = props;
 
   const {data, getProductFromCart, addInCartAsync} = useAllBasket();
   const count = getProductFromCart(productId)?.count;
 
   useEffect(() => {
-    if (onChange) onChange(count || 1, 0)
+    if (onChange) onChange(count || 1, 0);
   }, [productId]);
 
   async function addProduct() {
@@ -28,8 +27,8 @@ const BuyOrCount = (props: Props) => {
       onChange(1, count);
     }
     await addInCartAsync({
-      productId: productId,
-      typeAction: "add"
+      productId,
+      typeAction: 'add'
     });
   }
   //

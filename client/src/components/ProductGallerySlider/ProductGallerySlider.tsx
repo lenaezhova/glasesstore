@@ -17,7 +17,7 @@ interface ProductGallerySliderProps {
 }
 
 export const ProductGallerySlider: FC<ProductGallerySliderProps> = ({
-  images = [],
+  images = []
 }) => {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
 
@@ -30,14 +30,14 @@ export const ProductGallerySlider: FC<ProductGallerySliderProps> = ({
           spaceBetween={10}
           thumbs={{
             swiper:
-              //@ts-ignore
-              thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null,
+              // @ts-ignore
+              thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null
           }}
           modules={[FreeMode, Navigation, Thumbs]}
           navigation={{
             disabledClass: s.disabled,
             nextEl: `.${s.nextSlide}`,
-            prevEl: `.${s.prevSlide}`,
+            prevEl: `.${s.prevSlide}`
           }}
           className={'mySwiper2'}
         >
@@ -63,9 +63,9 @@ export const ProductGallerySlider: FC<ProductGallerySliderProps> = ({
           </div>
         </div>
       </div>
-      {/*BottomSlider*/}
+      {/* BottomSlider */}
       <Swiper
-        //@ts-ignore
+        // @ts-ignore
         onSwiper={setThumbsSwiper}
         spaceBetween={10}
         slidesPerView={3}

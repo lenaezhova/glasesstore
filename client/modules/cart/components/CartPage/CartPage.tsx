@@ -9,14 +9,12 @@ const CartPage = () => {
   const {data} = useAllBasket();
 
   return (
-    <div className={s.block}>
 
-      {data?.length && data?.length > 0
+      data?.length && data?.length > 0
         ? <CartList/>
         : <CartEmpty/>
-      }
 
-    </div>
+
   );
 };
 

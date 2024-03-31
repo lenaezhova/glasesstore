@@ -1,0 +1,27 @@
+.imageWrapper {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.titleWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+
+  p {
+    max-width: 80%;
+    overflow: hidden;
+    word-break: break-all;
+    word-wrap: break-word;
+  }
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}

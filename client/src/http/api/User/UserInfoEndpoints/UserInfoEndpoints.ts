@@ -1,13 +1,15 @@
 import $glassesApi from '@/src/http';
-import {IBasketResponse, ICartProduct, IFavoriteResponse} from "@/src/http/api/User/UserInfoEndpoints/type";
+import {IBasketResponse, ICartProduct, IFavoriteResponse} from '@/src/http/api/User/UserInfoEndpoints/type';
 
 export default class UserInfoEndpoints {
   static getUserInfo = async ({id}: {id: string | undefined}) => {
     const {data} = await $glassesApi.get(
       '/user',
-      {params: {
+      {
+        params: {
           id
-        }}
+        }
+      }
     );
 
     return data;
@@ -16,9 +18,11 @@ export default class UserInfoEndpoints {
   static getFavorite = async ({userId}: {userId: string}): Promise<IFavoriteResponse> => {
     const {data} = await $glassesApi.get(
       '/favorite',
-      {params: {
+      {
+        params: {
           userId
-        }}
+        }
+      }
     );
 
     return data;
@@ -27,9 +31,11 @@ export default class UserInfoEndpoints {
   static getBasket = async ({userId}: {userId: string}): Promise<{products: ICartProduct[]}> => {
     const {data} = await $glassesApi.get(
       '/basket',
-      {params: {
+      {
+        params: {
           userId
-        }}
+        }
+      }
     );
 
     return data;

@@ -43,11 +43,11 @@ const SwiperProductsItem = (props: Props) => {
             objectFit='cover'
             preloaderSize='large'
           />
-          {/*{isHovering && (*/}
-          {/*  <div ref={favoriteRef} className={s.heart}>*/}
-          {/*    <FavoriteAdd product={product} />*/}
-          {/*  </div>*/}
-          {/*)}*/}
+          {/* {isHovering && ( */}
+          {/*  <div ref={favoriteRef} className={s.heart}> */}
+          {/*    <FavoriteAdd product={product} /> */}
+          {/*  </div> */}
+          {/* )} */}
         </div>
         <div className={s.infoContainer}>
           <div className={s.infoTitleContainer}>
@@ -60,7 +60,7 @@ const SwiperProductsItem = (props: Props) => {
             <div className={s.infoPrice}>
               <div className={s.itemPrice}>{product.price} ₽</div>
               <div ref={buyOrCountRef}>
-                {/*<BuyOrCount product={product} classNameCounter={s.counter} classNameButton={s.buyButton} />*/}
+                {/* <BuyOrCount product={product} classNameCounter={s.counter} classNameButton={s.buyButton} /> */}
               </div>
             </div>
           )}

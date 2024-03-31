@@ -12,7 +12,6 @@ const CartList = () => {
         <CartListMain setTotalPrice={setTotalPrice}/>
         <CartFiledBuy totalPrice={totalPrice}/>
       </div>
-      <CartFooter/>
     </div>
   );
 };

@@ -1,7 +1,7 @@
 import s from './InStockCounter.module.scss';
 import clsx from 'clsx';
 import { RefObject, memo } from 'react';
-import {useAllBasket} from "@/src/http/hooks/useAllBasket";
+import {useAllBasket} from '@/src/http/hooks/useAllBasket';
 
 interface Props {
   productId?: string;
@@ -29,16 +29,16 @@ const InStockCounter = (props: Props) => {
   async function addProduct() {
     if (onChange && currentProduct?.count) onChange(currentProduct?.count + 1, currentProduct?.count);
     await addInCartAsync({
-      productId: productId,
-      typeAction: "add"
+      productId,
+      typeAction: 'add'
     });
   }
 
   async function removeProduct() {
     if (onChange && currentProduct?.count) onChange(currentProduct?.count - 1 < 0 ? 0 : currentProduct?.count - 1, currentProduct?.count);
     await addInCartAsync({
-      productId: productId,
-      typeAction: "remove"
+      productId,
+      typeAction: 'remove'
     });
   }
 

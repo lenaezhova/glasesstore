@@ -10,6 +10,7 @@ const TypeLensModel = require('../models/ProductModels/typeLens-model')
 const DesignModel = require('../models/ProductModels/design-model')
 const OpticsModel = require('../models/ProductModels/optics-model')
 const ImagesModel = require('../models/ProductModels/image-model')
+const BannersModel = require('../models/ProductModels/banners-model')
 const {ObjectId} = require("mongodb");
 const {Schema} = require('mongoose');
 const ApiError = require('../exceptions/api-error');
@@ -65,6 +66,26 @@ class ProductService {
         throw ApiError.BadRequest(`Статуc уже существует`)
     const res = await StatusModel.create({name});
     return res;
+  }
+
+  async addInBanner(title, productIds) {
+    const bannersDto = await BannersModel.findOne({title})
+    if (bannersDto) {
+      bannersDto.productIds = productIds;
+      await bannersDto.save();
+    } else {
+      const bannersDto = await BannersModel.create({title, productIds})
+    }
+    return bannersDto;
+  }
+
+  async getBanner(title) {
+    const bannersDto = await BannersModel.findOne({title})
+    if (bannersDto) {
+      return bannersDto;
+    }
+
+    return [];
   }
 
   async getAllStatus() {

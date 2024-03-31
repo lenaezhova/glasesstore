@@ -6,13 +6,21 @@ import Link from 'next/link';
 import TelegramSvg from '@/src/components/UI/TelegramSvg/TelegramSvg';
 import ViberSvg from '@/src/components/UI/ViberSvg/ViberSvg';
 import WhatsAppSvg from '@/src/components/UI/WhatsAppSvg/WhatsAppSvg';
+import PreloaderImage from '@/src/components/PreloaderImage/PreloaderImage';
 
 export default function Footer() {
   return (
     <div className={s.footer}>
       <div className={s.footerInner}>
         <div className={s.footerLogo}>
-          <Image className={s.logo} width='200' height='200' src={LogoFooter} alt={''} />
+          {/* <Image className={s.logo} width='150' height='200' src={LogoFooter} alt={''} /> */}
+          <PreloaderImage
+            className={s.footerLogo}
+            src={LogoFooter}
+            alt={'GlassesFooter'}
+            objectFit='cover'
+            position='relative'
+          />
         </div>
 
         <div className={s.footerCenter}>

@@ -8,6 +8,8 @@ router.get('/all', ProductController.getAll);
 router.get('/one', ProductController.getOne);
 router.get('/users', adminMiddleware, userController.getUsers);
 router.post('/create',adminMiddleware, ProductController.create);
+router.post('/add_banner',adminMiddleware, ProductController.addInBanner);
+router.get('/get_banner', ProductController.getBanner);
 router.post('/update/:id',adminMiddleware, ProductController.update);
 router.delete('/deleteOne/:id',adminMiddleware, ProductController.deleteOne);
 

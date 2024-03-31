@@ -43,7 +43,7 @@ export default function CatalogPage(props: Props) {
   return (
     <>
       <div className={s.block}>
-        <CatalogSidebar/>
+        {/*<CatalogSidebar/>*/}
         <CatalogList/>
       </div>
       {/*<div className={s.swiper}>*/}

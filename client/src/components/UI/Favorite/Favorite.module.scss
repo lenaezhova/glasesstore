@@ -1,24 +1,13 @@
-.AntdBtn {
-
-  :global {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(255, 255, 255, 0);
-    border: 0;
-    color: #fff;
-    box-shadow: 0 0 0 rgba(0, 0, 0, 0.0);
-    margin-top: -15px;
-  }
+.btnIcon {
+  background: transparent;
 }
-
 .iconContainer {
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
 }
 
 .count {
@@ -36,7 +25,7 @@
 }
 
 .icon {
-  color: #494f54;
+  color: black;
 }
 
 .favoriteContainer {

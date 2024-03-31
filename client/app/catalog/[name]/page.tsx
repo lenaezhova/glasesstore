@@ -7,10 +7,10 @@ export default function CatalogIdPage({ params }: { params: { name: string } }) 
 
   return (
     <>
-      <h1 className={'textHeader'}>{name === 'all' ? 'Очки' : name.toUpperCase()}</h1>
-      {/*<div style={{marginTop: 25, marginBottom: 50}}>*/}
-      {/*  <OplataBanner/>*/}
-      {/*</div>*/}
+      <h1 className={'textHeader'}>{name === 'all' ? 'Каталог' : name.toUpperCase()}</h1>
+      {/* <div style={{marginTop: 25, marginBottom: 50}}> */}
+      {/*  <OplataBanner/> */}
+      {/* </div> */}
       <div className={'container'}>
         <CatalogPage name={name}/>
       </div>

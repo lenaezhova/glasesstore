@@ -1,0 +1,16 @@
+.primary {
+  padding: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(166, 186, 210, 0.47) !important;
+  border: none;
+  font-size: 18px;
+  transition: 0.3s opacity ease;
+  //border-radius: 12px !important;
+
+  &:hover {
+    color: white !important;
+    opacity: .66;
+  }
+}

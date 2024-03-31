@@ -1,5 +1,5 @@
-import {useAllFavorite} from "@/src/http/hooks/useAllFavroite";
-import {message} from "antd";
+import {useAllFavorite} from '@/src/http/hooks/useAllFavroite';
+import {message} from 'antd';
 
 export const useInvalidateUserSubInfo = () => {
   const {invalidate: invalidateFavorite} = useAllFavorite();
@@ -12,5 +12,5 @@ export const useInvalidateUserSubInfo = () => {
         message.error('Ошибка при обновлении информации о пользователе');
       }
     }
-  }
-}
+  };
+};

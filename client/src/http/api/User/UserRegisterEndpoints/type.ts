@@ -37,7 +37,7 @@ export interface IPostAddBasket {
 }
 
 export const countBasketTypeAction = {
-  'delete': undefined,
-  'add': 1,
-  'remove': -1
-}
+  delete: undefined,
+  add: 1,
+  remove: -1
+};

@@ -8,21 +8,21 @@ import FavoriteAdd from '@/src/components/FavoriteAdd/FavoriteAdd';
 import BuyOrCount from '@/src/components/BuyOrCount/BuyOrCount';
 import Link from 'next/link';
 import {IProduct} from '@/src/http/api/Product/ProductInfoEndpoints/type';
-import {useOneProduct} from "@/src/http/hooks/useOneProduct";
-import imagesLogo from 'public/logo.jpg'
+import {useOneProduct} from '@/src/http/hooks/useOneProduct';
+import imagesLogo from 'public/logo.jpg';
 interface Props {
   product?: IProduct;
   productId?: string;
 }
 
-const CardCatalogItem = ( {product, productId}: Props) => {
+const CardCatalogItem = ({product, productId}: Props) => {
   const mainContainerRef = useRef<any>();
   const isHovering = useIsHover(mainContainerRef);
   const buyOrCountRef = useRef<any>();
   const favoriteRef = useRef<any>();
   const router = useRouter();
   let newProduct = product;
-  const {data} = useOneProduct(productId)
+  const {data} = useOneProduct(productId);
   if (productId) newProduct = data;
 
   const handleRedirectToProduct = (event: any) => {
@@ -56,7 +56,7 @@ const CardCatalogItem = ( {product, productId}: Props) => {
         <div className={s.infoContainer}>
           <div className={s.infoTitleContainer}>
             <Link href={'/product/' + newProduct?._id} className={s.itemTitle}>{newProduct?.name}</Link>
-            {/*<Reviews average={product.rating} classStar={s.classStar} classReviewsText={s.classReviewsText}/>*/}
+            {/* <Reviews average={product.rating} classStar={s.classStar} classReviewsText={s.classReviewsText}/> */}
           </div>
 
           <div className={s.infoPrice}>

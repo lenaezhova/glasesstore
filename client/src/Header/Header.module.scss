@@ -1,0 +1,192 @@
+@import 'src/styles/mixins';
+
+.catalogButton {
+  width: fit-content !important;
+  height: fit-content !important;
+  @include fluid(font-size, 14px, 14px);
+  padding: 0 !important;
+  border-radius: 0 !important;
+  background-color: none !important;
+  background: none !important;
+  margin: 0px !important;
+  color:  var(--text-color);
+  transition: $trn !important;
+  display: flex;
+  align-items: center;
+
+  &:hover {
+    color: #a5a5a5 !important;
+  }
+}
+
+.headerLogo {
+  width: 200px;
+  height: 90px;
+}
+
+.header {
+  display: flex;
+  padding: 16px 0px;
+  @include fluid(font-size, 12px, 14px);
+  backdrop-filter: blur(8px);
+  //background: $headerBgColor;
+  background: transparent;
+
+  border-bottom: 1px solid $headerBorderColor;
+  // box-shadow: $headerBoxShadow;
+  align-items: center;
+  height: 93px;
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  line-height: 1.2;
+  z-index: 10;
+  width: 100%;
+  transition: 0.3s top ease;
+
+  &__container {
+    @include container;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__icons {
+    padding-right: 10px;
+    display: flex;
+    justify-content: flex-end;
+    flex-grow: 1;
+    align-items: center;
+    column-gap: 15px;
+
+    @media screen and (max-width: 830px) {
+      column-gap: 8px;
+    }
+  }
+
+  &__icon {
+    position: relative;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    border: 1px solid $headerButtonMenuBorderColor;
+    position: relative;
+    cursor: pointer;
+    transition: $trn;
+    font-size: 18px;
+    color: $textColor;
+
+    a {
+      width: fit-content;
+      height: fit-content;
+      display: flex;
+    }
+
+    &:hover {
+      border: 1px solid #a5a5a5;
+    }
+
+    img {
+      @include fluid(width, 20px, 26px);
+      @include fluid(height, 20px, 26px);
+    }
+
+    &__count {
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      font-size: 10px;
+      top: -4px;
+      right: 2px;
+      background-color: $primaryBg;
+      border-radius: 50%;
+      width: 17px;
+      height: 17px;
+    }
+  }
+}
+
+.headerHide {
+  top: -93px;
+}
+
+.lang {
+  @extend .header__icon;
+  font-size: 16px;
+  line-height: 15px;
+}
+
+.navbar {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 10px;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 30px;
+  padding-left: 81px;
+
+  &__item {
+   font-size: 18px;
+    background: none !important;
+    color: black;
+    font-weight: 900;
+    display: flex;
+    align-items: center;
+    row-gap: 10px;
+    transition: $trn;
+
+    &:hover {
+      color: #a5a5a5;
+    }
+
+    svg {
+      margin-right: 8px;
+    }
+  }
+
+  @media screen and (max-width: 827px) {
+    display: none;
+  }
+}
+
+.link {
+  @include fluid(font-size, 14px, 14px);
+  position: relative;
+  font-weight: 400;
+  transition: $trn;
+  color: $textColor;
+  cursor: pointer;
+
+  &:hover {
+    color: #a5a5a5;
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.linkActive {
+  color: $primary;
+}
+
+.svg {
+  color: #fff;
+}
+
+.login {
+  @include fluid(font-size, 16px, 16px);
+  width: 45px;
+  height: 45px;
+  background: $textDarkGray;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

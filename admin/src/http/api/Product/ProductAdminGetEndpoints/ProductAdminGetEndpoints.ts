@@ -1,5 +1,6 @@
 import $glassesApi from '@/src/http';
-import {IGetResponse} from '@/src/http/api/Product/ProductAdminGetEndpoints/type';
+import {IBanner, IGetResponse, IProduct} from '@/src/http/api/Product/ProductAdminGetEndpoints/type';
+import {getImageUrl} from "@/src/helpers/getImagesUrl";
 
 export default class ProductAdminGetEndpoints {
   static getAllStatus = async (): Promise<IGetResponse[]> => {
@@ -72,5 +73,37 @@ export default class ProductAdminGetEndpoints {
     );
 
     return data;
+  };
+
+  static getAllProducts = async (): Promise<IGetResponse[]> => {
+    const {data} = await $glassesApi.get(
+      '/product/all/optics'
+    );
+
+    return data;
+  };
+
+  static getAllProduct = async (): Promise<IProduct[]> => {
+    const {data} = await $glassesApi.get(
+      '/product/all'
+    );
+    return data.map((el: {
+        imgIds: string[]
+      }) => ({
+        ...el,
+        imagesUrl: el?.imgIds?.map(imgId => getImageUrl(imgId)) || []
+      })
+    )
+  };
+
+  static getNowBuyBanner = async (): Promise<IBanner> => {
+    const {data} = await $glassesApi.get(
+      '/product/get_banner', {
+        params: {
+          title: 'NowBuy'
+        }
+      }
+    );
+    return data
   };
 }

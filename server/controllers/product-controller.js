@@ -1,5 +1,6 @@
 const EventService = require('../service/event-service')
 const ProductService = require('../service/product-service')
+const UserService = require("../service/user-service");
 
 class ProductController{
   async create(req, res, next){
@@ -38,6 +39,7 @@ class ProductController{
     }
   }
 
+
   async createStatus(req, res, next){
     try{
       const {name} = req.body;
@@ -47,6 +49,26 @@ class ProductController{
     } catch (e){
       console.log(e);
       next(e)
+    }
+  }
+
+  async addInBanner(req, res, next) {
+    try {
+      const {title, productIds} = req.body;
+      const users = await ProductService.addInBanner(title, productIds);
+      return res.json(users);
+    } catch (e) {
+      next(e);
+    }
+  }
+
+  async getBanner(req, res, next) {
+    try {
+      const {title} = req.query;
+      const users = await ProductService.getBanner(title);
+      return res.json(users);
+    } catch (e) {
+      next(e);
     }
   }
 

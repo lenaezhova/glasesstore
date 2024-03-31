@@ -5,7 +5,7 @@ import '@/src/styles/libs.scss'
 import {Metadata} from 'next';
 import React from 'react';
 import ClientProvider from '@/modules/ClientProdider';
-import Header from "@/src/components/Header/Header";
+import {Header} from "@/src/Header/Header";
 import Footer from "@/src/components/Footer/Footer";
 import AuthModal from "@/modules/modals/authentication/components/AuthModal/AuthModal";
 import AuthProvider from '@/modules/AuthProvider';
@@ -58,18 +58,31 @@ export default function RootLayout({
       className={`${Gilroy.variable} ${Montserrat.variable}`}
     >
       <body>
-        <main className='main'>
+        <div className='main'>
           <ClientProvider>
             <AuthProvider>
               <AuthModal/>
-              <Header/>
-              <div className='container'>
+              <Header navLinks={[
+                {
+                  name: 'Каталог',
+                  link: '/catalog/all'
+                },
+                {
+                  name: 'О нас',
+                  link: '/catalog/all'
+                },
+                {
+                  name: 'Как заказать',
+                  link: '/catalog/all'
+                }
+              ]}/>
+              <main className='main'>
                 {children}
-              </div>
+              </main>
               <Footer/>
             </AuthProvider>
           </ClientProvider>
-        </main>
+        </div>
       </body>
     </html>
   );

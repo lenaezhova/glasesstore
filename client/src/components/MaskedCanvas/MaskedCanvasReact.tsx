@@ -4,7 +4,7 @@ const MaskedCanvasReact = ({imageUrl}: {
   imageUrl: string
 }) => {
 
-  let htmlCode = `
+  const htmlCode = `
   <!doctype html>
   <html lang="en">
   <head>
@@ -95,16 +95,13 @@ function windowResized() {
 }
     </script>
   </body>
-  </html>`
-
+  </html>`;
 
   // Создайте Blob с HTML кодом
-  let blob = new Blob([htmlCode], { type: 'text/html' });
+  const blob = new Blob([htmlCode], { type: 'text/html' });
 
-// Создайте URL из Blob
-  let url = URL.createObjectURL(blob);
-
-
+  // Создайте URL из Blob
+  const url = URL.createObjectURL(blob);
 
   return (
     <>

@@ -14,7 +14,7 @@ export default function ProductLayout({children}: {children: React.ReactNode}) {
   return (
     <div className={'main'}>
       <div className='container'>{children}</div>
-      {/*<SubscribeEmailBanner />*/}
+      {/* <SubscribeEmailBanner /> */}
     </div>
   );
 }

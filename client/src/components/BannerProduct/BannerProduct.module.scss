@@ -1,0 +1,46 @@
+.banner {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.titleWrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+}
+
+.title {
+  font-weight: 600;
+  font-size: 35px;
+  line-height: 119.3%;
+  text-align: center;
+  color: #000000;
+}
+
+.linkWrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #585555;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: black;
+  }
+}
+
+.href {
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 30px;
+  text-transform: uppercase;
+}
+
+.productWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

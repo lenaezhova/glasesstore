@@ -12,8 +12,10 @@ export const metadata: Metadata = {
 export default function FavoritesLayout({children}: {children: React.ReactNode}) {
   return (
     <div className={'main'}>
-      <h1 className={'textHeader'}>{'Избранное'.toUpperCase()}</h1>
-      <div className={'container'}>{children}</div>
+      <div className={'container'}>
+        <h1 className={'textHeader'}>{'Избранное'.toUpperCase()}</h1>
+        {children}
+      </div>
     </div>
   );
 }

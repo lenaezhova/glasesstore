@@ -14,10 +14,10 @@ export default function CatalogLayout({ children } : { children: React.ReactNode
 
   return (
     <div className={'main'}>
-      <div>
+      <div className={'container'}>
         { children }
       </div>
-      {/*<SubscribeEmailBanner />*/}
+      {/* <SubscribeEmailBanner /> */}
     </div>
   );
 }

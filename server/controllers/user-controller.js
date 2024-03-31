@@ -2,11 +2,11 @@ const UserService = require('../service/user-service')
 const {validationResult} = require('express-validator');
 const ApiError = require('../exceptions/api-error');
 
-class UserController{
-    async registration(req, res, next){
+class UserController {
+    async registration(req, res, next) {
         try {
             const errors = validationResult(req);
-            if (!errors.isEmpty()){
+            if (!errors.isEmpty()) {
                 return next(ApiError.BadRequest('Ошибка при валидации', errors.array()));
             }
             const {email, password, name, surname} = req.body;
@@ -16,31 +16,32 @@ class UserController{
                 httpOnly: true
             })
             return res.json(userData)
-        } catch (e){
+        } catch (e) {
             next(e);
         }
     }
 
-    async updateUserInformation(req, res, next){
+    async updateUserInformation(req, res, next) {
         try {
             const {email, name, surname, patronymic, gender} = req.body;
             const userData = await UserService.updateUserInformation(email, name, surname, patronymic, gender);
             return res.json({user: userData})
-        } catch (e){
-            next(e);
-        }
-    }
-    async updateUserPassword(req, res, next){
-        try {
-            const {email, oldPassword, newPassword} = req.body;
-            const userData = await UserService.updatePassword(email, oldPassword, newPassword);
-            return res.json(userData)
-        } catch (e){
+        } catch (e) {
             next(e);
         }
     }
 
-    async login(req, res, next){
+    async updateUserPassword(req, res, next) {
+        try {
+            const {email, oldPassword, newPassword} = req.body;
+            const userData = await UserService.updatePassword(email, oldPassword, newPassword);
+            return res.json(userData)
+        } catch (e) {
+            next(e);
+        }
+    }
+
+    async login(req, res, next) {
         try {
             const {email, password} = req.body;
             const userData = await UserService.login(email, password);
@@ -49,62 +50,62 @@ class UserController{
                 httpOnly: true
             })
             return res.json(userData)
-        } catch (e){
+        } catch (e) {
             next(e);
         }
     }
 
-    async addFavorite(req, res, next){
+    async addFavorite(req, res, next) {
         try {
             const {userId, productId} = req.body;
             const favoriteData = await UserService.addFavorite(userId, productId);
             return res.json(favoriteData)
-        } catch (e){
+        } catch (e) {
             next(e);
         }
     }
 
-    async addBasket(req, res, next){
+    async addBasket(req, res, next) {
         try {
             const {userId, productId, count} = req.body;
             const favoriteData = await UserService.addBasket(userId, productId, count);
             return res.json(favoriteData)
-        } catch (e){
+        } catch (e) {
             next(e);
         }
     }
 
-    async clearBasket(req, res, next){
+    async clearBasket(req, res, next) {
         try {
             const {userId} = req.body;
             const basketData = await UserService.clearBasket(userId);
             return res.json(basketData)
-        } catch (e){
+        } catch (e) {
             next(e);
         }
     }
 
-    async getBasket(req, res, next){
+    async getBasket(req, res, next) {
         try {
             const {userId} = req.query;
             const basketData = await UserService.getBasket(userId);
             return res.json(basketData)
-        } catch (e){
+        } catch (e) {
             next(e);
         }
     }
 
-    async getFavorite(req, res, next){
+    async getFavorite(req, res, next) {
         try {
             const {userId} = req.query;
             const favoriteData = await UserService.getFavorite(userId);
             return res.json(favoriteData)
-        } catch (e){
+        } catch (e) {
             next(e);
         }
     }
 
-    async loginAdmin(req, res, next){
+    async loginAdmin(req, res, next) {
         try {
             const {email, password} = req.body;
             const userData = await UserService.loginAdmin(email, password);
@@ -113,33 +114,34 @@ class UserController{
                 httpOnly: true
             })
             return res.json(userData)
-        } catch (e){
+        } catch (e) {
             next(e);
         }
     }
 
-    async logout(req, res, next){
+    async logout(req, res, next) {
         try {
             // const {refreshToken} = req.cookies;
             // const token = await UserService.logout(refreshToken);
             const token = await UserService.logout('');
             res.clearCookie('refreshToken');
             return res.json(token);
-        } catch (e){
+        } catch (e) {
             next(e);
         }
     }
 
-    async activate(req, res, next){
+    async activate(req, res, next) {
         try {
             const activationLink = req.params.link;
             await UserService.activate(activationLink)
             return res.redirect(process.env.CLIENT_URL);
-        } catch (e){
+        } catch (e) {
             next(e);
         }
     }
-    async refresh(req, res, next){
+
+    async refresh(req, res, next) {
         try {
             // const {refreshToken} = req.cookies;
             const {refreshToken} = req.body;
@@ -149,26 +151,26 @@ class UserController{
                 httpOnly: true
             })
             return res.json(userData)
-        } catch (e){
+        } catch (e) {
             next(e);
         }
     }
 
-    async getUser(req, res, next){
+    async getUser(req, res, next) {
         try {
             const {id} = req.query;
             const user = await UserService.getUser(id);
             return res.json(user);
-        } catch (e){
+        } catch (e) {
             next(e);
         }
     }
 
-    async getUsers(req, res, next){
+    async getUsers(req, res, next) {
         try {
             const users = await UserService.getAllUsers();
             return res.json(users);
-        } catch (e){
+        } catch (e) {
             next(e);
         }
     }
