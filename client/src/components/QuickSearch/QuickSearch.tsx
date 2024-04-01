@@ -98,7 +98,7 @@ const QuickSearch = (props: Props) => {
         type='link'
         onClick={() => handleOpen()}
         icon={<IconSearch className={s.svg} style={{
-          fontSize: 28
+          fontSize: 30
         }}/>}
         className={s.quickSearchButton}
         area-label={'placeholder'}

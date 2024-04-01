@@ -17,10 +17,10 @@ const Cart = () => {
     >
       <div className={s.iconContainer}>
         <IconCart className={s.cartIcon} style={{fontSize: '26px'}}/>
-        {/* {data?.length && data?.length > 0 */}
-        {/*  ? <div className={s.count}>{data?.length}</div> */}
-        {/*  : null */}
-        {/* } */}
+         {data?.length && data?.length > 0
+          ? <div className={s.count}>{data?.length}</div>
+          : null
+         }
         {/* <div className={s.text}>Корзина</div> */}
       </div>
     </button>

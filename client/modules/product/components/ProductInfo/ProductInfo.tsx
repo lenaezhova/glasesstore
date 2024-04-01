@@ -35,12 +35,12 @@ const ProductInfo = ({product}: Props) => {
          <ProductGallerySlider images={product?.imagesUrl || []}/>
         </div>
 
-        <div className={s.infoCharacters}>
-          <ul>
-            <li className={s.infoCharactersItem}>Брэнд: 1</li>
-            <li className={s.infoCharactersItem}>Описание: 1</li>
-          </ul>
-        </div>
+        {/*<div className={s.infoCharacters}>*/}
+        {/*  <ul>*/}
+        {/*    <li className={s.infoCharactersItem}>Брэнд: 1</li>*/}
+        {/*    <li className={s.infoCharactersItem}>Описание: 1</li>*/}
+        {/*  </ul>*/}
+        {/*</div>*/}
       </div>
 
     </div>

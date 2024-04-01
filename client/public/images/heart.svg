@@ -14,7 +14,7 @@
       <use xlink:href="#heart-c"/>
     </mask>
     <use fill="#000000" fill-rule="nonzero" xlink:href="#heart-c"/>
-    <g fill="#7A6CFD" mask="url(#heart-d)">
+    <g fill="#A5BBD2" mask="url(#heart-d)">
       <rect width="24" height="24" transform="translate(-1 -2)"/>
     </g>
   </g>

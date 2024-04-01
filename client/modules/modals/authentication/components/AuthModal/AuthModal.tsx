@@ -23,14 +23,14 @@ const AuthModal = () => {
       <div className={s.footer}>
         {isLogin ? (
           <div>
-            Нет аккаунта? <Link onClick={() => setIsLogin(false)}>Зарегистрируйся!</Link>
+            Нет аккаунта? <Link className={s.href} onClick={() => setIsLogin(false)}>Зарегистрируйся!</Link>
           </div>
         ) : (
           <div>
-            Есть аккаунт? <Link onClick={() => setIsLogin(true)}>Авторизуйтесь!</Link>
+            Есть аккаунт? <Link className={s.href} onClick={() => setIsLogin(true)}>Авторизуйтесь!</Link>
           </div>
         )}
-        <div>
+        <div className={s.btnContainer}>
           <Button className={s.AntdButton} onClick={() => form.submit()}>
             {isLogin ? 'Войти' : 'Зарегистрироваться'}
           </Button>
@@ -42,6 +42,7 @@ const AuthModal = () => {
   return (
     <>
       <CustomModal
+        className={s.modal}
         title={isLogin ? 'Авторизация' : 'Регистрация'}
         isOpen={isVisibleAuthModal}
         onCancel={() => setIsVisibleAuthModal(false)}

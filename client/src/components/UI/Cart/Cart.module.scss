@@ -14,7 +14,7 @@
 
 .count {
   position: absolute;
-  top: -6px;
+  top: -2px;
   right: -3px;
   width: 20px;
   height: 20px;
@@ -22,7 +22,7 @@
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  background-color: var(--primary--color);
+  background-color: var(--primary--color--header);
   font-size: 12px;
 }
 

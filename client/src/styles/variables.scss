@@ -14,13 +14,15 @@
   --overlay-color: rgba(0 0 0 / 35%);
   --modal-z-index: 10;
   --product-text-color: #8c959c;
-  --primary--color: #7A6CFD;
+  --primary--color: #A5BBD2;
+  --primary--color--header: rgba(143, 163, 183, 0.58);
   --block-radius: 10px;
   --background-card: #FFFFF;
   --background-card-small: #eaeaea;
   --box-shadow-color: rgba(108, 120, 253, 0.2);
   --text-color: #171717;
-  --headerBgColor: rgb(255 255 255 / 84%);
+  //--headerBgColor: rgb(255 255 255 / 84%);
+  --headerBgColor: url(../../public/header.png) center center repeat;
   --headerBorderColor: rgb(0 0 0 / 8%);
   --headerButtonMenuBorderColor: #cdcdcd;
   --primary-bg: #ffae1d;

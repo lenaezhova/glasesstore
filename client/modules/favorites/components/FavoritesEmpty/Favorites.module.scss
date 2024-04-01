@@ -16,10 +16,12 @@
 }
 
 .container {
+  margin-top: 90px;
   display: flex;
   flex-direction: column;
   align-items: center;
   max-width: 380px;
+  gap: 5px;
 }
 
 .text {

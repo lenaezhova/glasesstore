@@ -29,7 +29,7 @@ const AuthIco = () => {
     >
       <div className={s.container}>
         <div className={s.containerIcon}>
-          <IconProfile className={s.icon} style={{fontSize: '26px'}}/>
+          <IconProfile className={s.icon} style={{fontSize: '30px'}}/>
         </div>
       </div>
     </button>

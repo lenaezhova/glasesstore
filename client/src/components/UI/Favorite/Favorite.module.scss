@@ -1,16 +1,18 @@
 .btnIcon {
   background: transparent;
+  border: none;
 }
 .iconContainer {
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 44px;
-  height: 44px;
+  width: 46px;
+  height: 46px;
 }
 
 .count {
+  //border: 1px black solid;
   position: absolute;
   top: 0;
   right: -3px;
@@ -20,7 +22,7 @@
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  background-color: var(--primary--color);
+  background-color: var(--primary--color--header);
   font-size: 12px;
 }
 

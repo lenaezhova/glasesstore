@@ -16,9 +16,11 @@
 }
 
 .container {
+  margin-top: 100px;
   display: flex;
   flex-direction: column;
   align-items: center;
   max-width: 380px;
+  gap: 15px;
 }
 

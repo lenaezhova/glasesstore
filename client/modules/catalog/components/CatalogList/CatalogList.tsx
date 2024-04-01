@@ -41,23 +41,23 @@ const CatalogList = () => {
   return (
     <div className={s.block}>
 
-      <div className={s.containerHeader}>
-        <Image
-          className={s.menuIcon}
-          src={isVert ? menuBlock : menuBlockBlue}
-          alt={''}
-          onClick={handleClickMenuBlock}
-        />
+      {/*<div className={s.containerHeader}>*/}
+      {/*  <Image*/}
+      {/*    className={s.menuIcon}*/}
+      {/*    src={isVert ? menuBlock : menuBlockBlue}*/}
+      {/*    alt={''}*/}
+      {/*    onClick={handleClickMenuBlock}*/}
+      {/*  />*/}
 
-        <Image
-          className={s.menuIcon}
-          src={isVert ? menuVecBlue : menuVec}
-          alt={''}
-          onClick={handleClickMenuVec}
-        />
-      </div>
+      {/*  <Image*/}
+      {/*    className={s.menuIcon}*/}
+      {/*    src={isVert ? menuVecBlue : menuVec}*/}
+      {/*    alt={''}*/}
+      {/*    onClick={handleClickMenuVec}*/}
+      {/*  />*/}
+      {/*</div>*/}
 
-      <div className={s.underline}/>
+      {/*<div className={s.underline}/>*/}
 
       {/*{isVert*/}
       {/*  ? <CartVert products={products} setProducts={setProducts}/>*/}

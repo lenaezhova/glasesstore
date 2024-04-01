@@ -51,7 +51,7 @@ const CartItem = ({productId, className, setTotalPrice}: Props) => {
         <div className={s.containerInfo}>
 
           <h3 className={s.containerTitle}>
-            <Link className={s.linkTitle} href={'/product/' + data?._id}>{data?.name.toUpperCase()}</Link>
+            <Link className={s.linkTitle} href={'/product/' + data?._id}>{data?.name?.toUpperCase()}</Link>
             {/*<Reviews average={1} classStar={s.classStar} classReviewsText={s.classReviewsText}/>*/}
           </h3>
 

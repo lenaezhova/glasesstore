@@ -51,7 +51,7 @@ const FieldBuy = ({id} : Props) => {
           }
           <div className={s.favoriteContainer}>
             { inFavorite
-              ? <FavoriteAddSVG fill={'#7A6CFD'} onClick={handleAddFavorite}/>
+              ? <FavoriteAddSVG fill={'#A5BBD2'} onClick={handleAddFavorite}/>
               : <FavoriteAddSVG onClick={handleAddFavorite}/>
             }
           </div>

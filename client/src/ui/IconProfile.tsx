@@ -6,15 +6,24 @@ import { CustomIconComponentProps } from '@ant-design/icons/lib/components/Icon'
 export const IconProfile = (props: Partial<CustomIconComponentProps>) => {
   const icon = () => (
 
-    <svg width='1em' height='1em' viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'>
+  <svg enable-background="new 0 0 512 512" height="1em" width='1em' id="Layer_1" version="1.1" viewBox="0 0 512 512"
+  >
+    <g>
       <path
-        d='M3.73271 26.5629L3.73267 26.563C3.22738 27.7761 4.21847 29.05 5.50106 29.05H26.5011C27.7836 29.05 28.7747 27.7761 28.2694 26.563L28.2694 26.5629C26.247 21.713 21.499 18.95 16.0003 18.95C10.5031 18.95 5.75514 21.713 3.73271 26.5629ZM31.6857 28.2715L31.6858 28.2715C32.0795 30.052 30.6136 31.75 28.7139 31.75H3.28665C1.3884 31.75 -0.0789363 30.0519 0.314751 28.2715C1.48423 22.9845 5.13357 19.0835 9.949 17.3114L10.3685 17.157L10.0174 16.8804C7.84187 15.1665 6.45025 12.5428 6.45025 9.59998C6.45025 4.07169 11.353 -0.344802 17.1479 0.315555L17.148 0.315559C21.3405 0.792837 24.8124 4.06826 25.4379 8.14976L25.4379 8.14981C25.9786 11.6726 24.5091 14.8892 21.9846 16.8804L21.634 17.157L22.0531 17.3113C26.8654 19.0835 30.5179 22.9846 31.6857 28.2715ZM16.0003 2.94998C12.2655 2.94998 9.21745 5.92746 9.21745 9.59998C9.21745 13.2725 12.2655 16.25 16.0003 16.25C19.7367 16.25 22.7831 13.2725 22.7831 9.59998C22.7831 5.9275 19.7367 2.94998 16.0003 2.94998Z'
-        fill='currentColor'
+        d="    M348.574,145.901c0,53.522-43.377,96.914-96.901,96.914c-53.523,0-96.914-43.392-96.914-96.914    c0-53.51,43.391-96.901,96.914-96.901C305.197,49,348.574,92.391,348.574,145.901z"
+        fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"
+        stroke-width="20"/>
+      <path
+        d="    M275.38,274.46c95.561,9.706,170.154,90.401,170.154,188.54"         fill='none'
         stroke='currentColor'
-        stroke-width='0.3'
-      />
-    </svg>
+        stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="20"/>
+      <path
+        d="    M66.466,463c0-96.358,71.925-175.934,165.027-187.961" fill="none" stroke="#000000" stroke-width="20" stroke-linecap="round"
+        stroke-linejoin="round" stroke-miterlimit="10"/>
+    </g>
+  </svg>
 
-  );
+)
+  ;
   return <Icon component={icon} {...props} />;
 };

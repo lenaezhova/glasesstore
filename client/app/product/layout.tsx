@@ -13,7 +13,9 @@ export const metadata: Metadata = {
 export default function ProductLayout({children}: {children: React.ReactNode}) {
   return (
     <div className={'main'}>
-      <div className='container'>{children}</div>
+      <div className='container' style={{
+        marginTop: 100
+      }}>{children}</div>
       {/* <SubscribeEmailBanner /> */}
     </div>
   );
